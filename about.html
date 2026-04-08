@@ -94,7 +94,7 @@
 
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">📈</div>
+                    <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg></div>
                     <h3>발전 (Development)</h3>
                     <p>
                         안주하지 않고 계속 공부하고 연구합니다. 브리핑 검사 방식도 끊임없이 수정을 거쳐 지금의 완성 단계에 이르렀습니다.
@@ -105,7 +105,7 @@
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">🤝</div>
+                    <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></div>
                     <h3>공감 (Empathy)</h3>
                     <p>
                         정보 전달이 아닌, 경험과 시각화를 통해 이해를 극대화합니다. 브리핑 검안, 누진렌즈 체험, 피팅 과정 설명 등 모든 과정이 투명하게 공유됩니다.
@@ -118,71 +118,7 @@
         </div>
     </section>
 
-    <!-- 역사 타임라인 -->
-    <section class="section bg-white">
-        <div class="container">
-            <div class="section-title">
-                <h2>언커버의 여정</h2>
-                <p>작은 안경원에서 기준을 만드는 공간으로</p>
-            </div>
-
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-year">1999</div>
-                        <div class="timeline-description">
-                            추효성 대표, 안경사 면허 취득 및 실무 시작
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-year">2005</div>
-                        <div class="timeline-description">
-                            "안경사 공부모임" 다음 카페 활동 시작. 동료 안경사들과의 토론과 연구가 언커버 철학의 기반이 됨
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-year">2012</div>
-                        <div class="timeline-description">
-                            차이역(JND) 기반 브리핑 검안 시스템 개발 착수. 고객 참여형 검안 프로세스 구축
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-year">2018</div>
-                        <div class="timeline-description">
-                            언커버 안경원 설립 (서울 중구 동호로). "가리지 않고 보여드립니다"라는 철학으로 출발
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-year">2020~</div>
-                        <div class="timeline-description">
-                            안경사 포럼 운영 시작 (연 100명 이상 참석), 언커버 아카데미 정식 개원, 검안광학회 기고
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-year">현재</div>
-                        <div class="timeline-description">
-                            전문가를 가르치는 권위, 감각 설계 검안, 체험 중심 시스템을 갖춘 컨설팅형 안경원으로 성장
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
     <!-- 전문성 강조 -->
     <section class="section content-section">
@@ -274,7 +210,7 @@
                     <p>서울시 중구 동호로 180</p>
                     <p>대표: 추효성</p>
                     <p>사업자등록번호: 633-18-00765</p>
-                    <p>전화: <a href="tel:010-7184-5569">010-7184-5569</a></p>
+                    <p>전화: <a href="tel:0507-1366-5586">0507-1366-5586</a></p>
                     <p>이메일: <a href="mailto:uncover2018@naver.com">uncover2018@naver.com</a></p>
                 </div>
 
@@ -333,5 +269,79 @@
             });
         });
     </script>
+
+    <!-- Channel Sidebar -->
+    <div class="channel-sidebar" id="channelSidebar">
+        <div class="sidebar-toggle" onclick="toggleSidebar()">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+            </svg>
+        </div>
+        <div class="sidebar-content">
+            <div class="channel-links">
+                <!-- Naver Reservation -->
+                <a href="https://booking.naver.com/booking/6/bizes/141576" target="_blank" class="channel-link" title="네이버 예약">
+                    <svg viewBox="0 0 24 24" fill="#03C75A"><path d="M16.273 12.845L7.376 0H0v24h7.726V11.156L16.624 24H24V0h-7.727v12.845z"/></svg>
+                    <span class="channel-tooltip">네이버 예약</span>
+                </a>
+                
+                <!-- Naver Place -->
+                <a href="https://naver.me/xtgBNR8W" target="_blank" class="channel-link" title="네이버 플레이스">
+                    <svg viewBox="0 0 24 24" fill="#03C75A"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    <span class="channel-tooltip">네이버 플레이스</span>
+                </a>
+                
+                <!-- KakaoTalk -->
+                <a href="http://pf.kakao.com/_MRZhC" target="_blank" class="channel-link" title="카카오톡 문의">
+                    <svg viewBox="0 0 24 24" fill="#FEE500"><path d="M12 3c5.799 0 10.5 3.664 10.5 8.185 0 4.52-4.701 8.184-10.5 8.184a13.5 13.5 0 01-1.727-.11l-4.408 2.883c-.501.265-.678.236-.472-.413l.892-3.678c-2.88-1.46-4.785-3.99-4.785-6.866C1.5 6.665 6.201 3 12 3z"/></svg>
+                    <span class="channel-tooltip">카카오톡 문의</span>
+                </a>
+                
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/uncover_optical/" target="_blank" class="channel-link" title="인스타그램">
+                    <svg viewBox="0 0 24 24" fill="url(#instagram-gradient)">
+                        <defs>
+                            <linearGradient id="instagram-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#FED373;stop-opacity:1" />
+                                <stop offset="25%" style="stop-color:#F15245;stop-opacity:1" />
+                                <stop offset="50%" style="stop-color:#D92E7F;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#9B36B7;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                    </svg>
+                    <span class="channel-tooltip">인스타그램</span>
+                </a>
+                
+                <!-- YouTube -->
+                <a href="https://youtube.com/channel/UCwtkhxlApDpmXNgMjLkmv-g" target="_blank" class="channel-link" title="유튜브">
+                    <svg viewBox="0 0 24 24" fill="#FF0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <span class="channel-tooltip">유튜브</span>
+                </a>
+                
+                <!-- Blog -->
+                <a href="https://blog.naver.com/uncover_ver2/" target="_blank" class="channel-link" title="네이버 블로그">
+                    <svg viewBox="0 0 24 24" fill="#03C75A"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm3.5 13.5h-3v-3h-2v3h-3v-2h3v-3h2v3h3v2z"/></svg>
+                    <span class="channel-tooltip">블로그</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById('channelSidebar');
+        sidebar.classList.toggle('open');
+    }
+    
+    // Close sidebar when clicking outside
+    document.addEventListener('click', function(event) {
+        const sidebar = document.getElementById('channelSidebar');
+        if (sidebar && !sidebar.contains(event.target)) {
+            sidebar.classList.remove('open');
+        }
+    });
+    </script>
+
 </body>
 </html>
