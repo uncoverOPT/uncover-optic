@@ -1,303 +1,354 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="언커버 안경원의 브랜드 철학과 역사. 1999년부터 시작된 전문성의 여정.">
-  <title>ABOUT - 언커버 안경원</title>
-  
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="images/logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="기준을 만드는 안경원. 안경은 도구, 결과는 안경사의 해석입니다. 언커버 안경원의 브랜드 철학과 역사">
+    <title>ABOUT - UNCOVER 언커버 안경원</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
-  <!-- 헤더 -->
-  <header class="header" id="header">
-    <div class="header__container">
-      <a href="index.html" class="logo">
-        <img src="images/logo.png" alt="UNCOVER Logo">
-        <span>UNCOVER</span>
-      </a>
-      
-      <nav class="nav" id="nav">
-        <ul class="nav__menu">
-          <li class="nav__item">
-            <a href="index.html" class="nav__link">HOME</a>
-          </li>
-          <li class="nav__item">
-            <a href="about.html" class="nav__link active">ABOUT</a>
-          </li>
-          <li class="nav__item has-dropdown">
-            <a href="experience.html" class="nav__link has-dropdown">EXPERIENCE</a>
-            <ul class="dropdown">
-              <li><a href="experience-briefing.html" class="dropdown__link">사전 브리핑</a></li>
-              <li><a href="experience-dizziness.html" class="dropdown__link">어지럼증 상담</a></li>
-              <li><a href="experience-progressive.html" class="dropdown__link">누진렌즈 전문</a></li>
-              <li><a href="experience-fitting.html" class="dropdown__link">정밀 피팅</a></li>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="UNCOVER Logo">
+                    <span>UNCOVER</span>
+                </a>
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html" class="active">ABOUT</a></li>
+                <li class="dropdown">
+                    <a href="experience.html">EXPERIENCE</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="experience-briefing.html">브리핑 검안</a></li>
+                        <li><a href="experience-dizziness.html">어지러움 해결</a></li>
+                        <li><a href="experience-progressive.html">누진 체험</a></li>
+                        <li><a href="experience-fitting.html">피팅 시스템</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="solution.html">SOLUTION</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="solution-symptom.html">증상별 해결</a></li>
+                        <li><a href="solution-age.html">연령별 맞춤</a></li>
+                        <li><a href="solution-occupation.html">직업별 케어</a></li>
+                        <li><a href="solution-lens.html">특수 렌즈</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="academy.html">ACADEMY</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="academy-forum.html">안경사 포럼</a></li>
+                        <li><a href="academy-education.html">언커버 아카데미</a></li>
+                        <li><a href="academy-internal.html">내부 교육</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="https://booking.naver.com/booking/6/bizes/141576" target="_blank" class="nav-cta">예약하기</a></li>
             </ul>
-          </li>
-          <li class="nav__item has-dropdown">
-            <a href="solution.html" class="nav__link has-dropdown">SOLUTION</a>
-            <ul class="dropdown">
-              <li><a href="solution-occupation.html" class="dropdown__link">직업별 맞춤</a></li>
-              <li><a href="solution-age.html" class="dropdown__link">연령별 솔루션</a></li>
-              <li><a href="solution-symptom.html" class="dropdown__link">증상별 처방</a></li>
-              <li><a href="solution-lens.html" class="dropdown__link">특수렌즈</a></li>
-            </ul>
-          </li>
-          <li class="nav__item has-dropdown">
-            <a href="academy.html" class="nav__link has-dropdown">ACADEMY</a>
-            <ul class="dropdown">
-              <li><a href="academy-forum.html" class="dropdown__link">검안포럼</a></li>
-              <li><a href="academy-education.html" class="dropdown__link">언커버 아카데미</a></li>
-              <li><a href="academy-internal.html" class="dropdown__link">내부 교육</a></li>
-            </ul>
-          </li>
-          <li class="nav__item">
-            <a href="contact.html" class="nav__link">CONTACT</a>
-          </li>
-        </ul>
-        <a href="https://booking.naver.com/booking/6/bizes/141576" target="_blank" class="nav__cta">네이버 예약</a>
-      </nav>
-      
-      <button class="nav__toggle" id="navToggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </header>
-
-  <!-- 히어로 -->
-  <section class="hero" style="min-height: 400px;">
-    <img src="images/store_front_person.jpg" alt="UNCOVER" class="hero__background">
-    <div class="hero__content">
-      <h1 class="hero__title">
-        ABOUT <span class="highlight">UNCOVER</span>
-      </h1>
-      <p class="hero__subtitle">
-        1999년부터 시작된 전문성의 여정
-      </p>
-    </div>
-  </section>
-
-  <!-- 브랜드 철학 -->
-  <section class="section">
-    <div class="container">
-      <div class="section__header">
-        <p class="section__subtitle">Brand Philosophy</p>
-        <h2 class="section__title">언커버의 철학</h2>
-      </div>
-      
-      <div style="max-width: 800px; margin: 0 auto; text-align: center; line-height: 2; font-size: 17px; color: var(--text-secondary);">
-        <p style="margin-bottom: 24px;">
-          <strong style="color: var(--text-primary); font-size: 20px;">단순히 안경을 판매하지 않습니다.</strong>
-        </p>
-        <p style="margin-bottom: 24px;">
-          우리는 당신의 눈을 이해하고, 라이프스타일을 파악하며,<br>
-          그에 맞는 최적의 시력 솔루션을 제공합니다.
-        </p>
-        <p>
-          정확한 검안, 충분한 상담, 정밀한 피팅.<br>
-          이 세 가지 원칙을 20년 이상 지켜왔습니다.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 히스토리 -->
-  <section class="section" style="background-color: var(--bg-section);">
-    <div class="container">
-      <div class="section__header">
-        <p class="section__subtitle">Our History</p>
-        <h2 class="section__title">언커버의 역사</h2>
-      </div>
-      
-      <div style="max-width: 700px; margin: 0 auto;">
-        <div style="border-left: 3px solid var(--primary); padding-left: 32px; position: relative;">
-          
-          <div style="margin-bottom: 48px; position: relative;">
-            <div style="position: absolute; left: -39px; top: 0; width: 12px; height: 12px; background-color: var(--primary); border-radius: 50%;"></div>
-            <div style="font-size: 24px; font-weight: 700; color: var(--primary); margin-bottom: 8px;">1999</div>
-            <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">언커버 창립</h3>
-            <p style="color: var(--text-secondary); line-height: 1.7;">
-              서울 강남에 첫 매장 오픈. "정확한 검안"이라는 한 가지 가치로 시작.
-            </p>
-          </div>
-          
-          <div style="margin-bottom: 48px; position: relative;">
-            <div style="position: absolute; left: -39px; top: 0; width: 12px; height: 12px; background-color: var(--primary); border-radius: 50%;"></div>
-            <div style="font-size: 24px; font-weight: 700; color: var(--primary); margin-bottom: 8px;">2005</div>
-            <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">검안포럼 시작</h3>
-            <p style="color: var(--text-secondary); line-height: 1.7;">
-              업계 최초 정기 검안 포럼 개최. 전문가 네트워크 구축.
-            </p>
-          </div>
-          
-          <div style="margin-bottom: 48px; position: relative;">
-            <div style="position: absolute; left: -39px; top: 0; width: 12px; height: 12px; background-color: var(--primary); border-radius: 50%;"></div>
-            <div style="font-size: 24px; font-weight: 700; color: var(--primary); margin-bottom: 8px;">2012</div>
-            <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">누진렌즈 전문화</h3>
-            <p style="color: var(--text-secondary); line-height: 1.7;">
-              누진다초점렌즈 전문 상담 시스템 도입. 어지럼증 케이스 집중 연구.
-            </p>
-          </div>
-          
-          <div style="margin-bottom: 48px; position: relative;">
-            <div style="position: absolute; left: -39px; top: 0; width: 12px; height: 12px; background-color: var(--primary); border-radius: 50%;"></div>
-            <div style="font-size: 24px; font-weight: 700; color: var(--primary); margin-bottom: 8px;">2018</div>
-            <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">언커버 아카데미 설립</h3>
-            <p style="color: var(--text-secondary); line-height: 1.7;">
-              전문 검안사 양성 교육 프로그램 런칭. 업계 표준 교육 커리큘럼 제시.
-            </p>
-          </div>
-          
-          <div style="position: relative;">
-            <div style="position: absolute; left: -39px; top: 0; width: 12px; height: 12px; background-color: var(--primary); border-radius: 50%;"></div>
-            <div style="font-size: 24px; font-weight: 700; color: var(--primary); margin-bottom: 8px;">2020~</div>
-            <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">디지털 시대 대응</h3>
-            <p style="color: var(--text-secondary); line-height: 1.7;">
-              디지털 기기 사용 증가에 따른 맞춤형 렌즈 솔루션 개발. 온라인 상담 시스템 구축.
-            </p>
-          </div>
-          
+            
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </nav>
 
-  <!-- 핵심 가치 -->
-  <section class="section">
-    <div class="container">
-      <div class="section__header">
-        <p class="section__subtitle">Core Values</p>
-        <h2 class="section__title">우리의 핵심 가치</h2>
-      </div>
-      
-      <div class="grid grid--3">
-        <div style="text-align: center;">
-          <div style="width: 80px; height: 80px; background-color: var(--primary-pale); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-size: 36px;">
-            🎯
-          </div>
-          <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">정확성</h3>
-          <p style="color: var(--text-secondary); line-height: 1.7;">
-            최신 검안 장비와 20년 경력의 전문 검안사. 밀리미터 단위의 정밀 측정으로 완벽한 처방을 제공합니다.
-          </p>
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>기준을 만드는 안경원</h1>
+            <p>안경은 도구입니다. 결과는 안경사의 해석에서 나옵니다.</p>
         </div>
-        
-        <div style="text-align: center;">
-          <div style="width: 80px; height: 80px; background-color: var(--primary-pale); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-size: 36px;">
-            💬
-          </div>
-          <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">소통</h3>
-          <p style="color: var(--text-secondary); line-height: 1.7;">
-            충분한 상담 시간을 확보합니다. 고객의 라이프스타일을 이해하고 맞춤형 솔루션을 제안합니다.
-          </p>
-        </div>
-        
-        <div style="text-align: center;">
-          <div style="width: 80px; height: 80px; background-color: var(--primary-pale); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-size: 36px;">
-            📚
-          </div>
-          <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">전문성</h3>
-          <p style="color: var(--text-secondary); line-height: 1.7;">
-            정기 포럼과 내부 교육을 통한 끊임없는 연구. 최신 검안 기술과 렌즈 트렌드를 항상 파악합니다.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA -->
-  <section class="section" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white;">
-    <div class="container" style="text-align: center;">
-      <h2 style="font-size: 36px; font-weight: 700; margin-bottom: 16px;">
-        언커버의 전문성을 경험하세요
-      </h2>
-      <p style="font-size: 18px; margin-bottom: 32px; opacity: 0.9;">
-        지금 바로 상담을 예약하고 정확한 검안을 받아보세요.
-      </p>
-      <a href="https://booking.naver.com/booking/6/bizes/141576" target="_blank" class="btn" style="background-color: white; color: var(--primary);">
-        네이버 예약하기
-      </a>
-    </div>
-  </section>
-
-  <!-- 푸터 -->
-  <footer class="footer">
-    <div class="footer__container">
-      <div class="footer__main">
-        <div class="footer__brand">
-          <div class="footer__logo">
-            <img src="images/logo.png" alt="UNCOVER Logo">
-            <span>UNCOVER</span>
-          </div>
-          <p class="footer__description">
-            1999년부터 시작된 전문 안경원.<br>
-            정확한 검안과 맞춤 상담으로 당신의 시력을 책임집니다.
-          </p>
+    <!-- 브랜드 철학 -->
+    <section class="section bg-white">
+        <div class="container">
+            <div class="content-block">
+                <div class="content-text">
+                    <h2>UNCOVER란</h2>
+                    <p>
+                        "가리지 않고 보여드립니다"라는 의미를 담은 언커버(UNCOVER)는 단순히 안경을 판매하는 곳이 아닙니다.
+                    </p>
+                    <p>
+                        고객의 시각적 불편함을 정확히 진단하고, 그 원인을 가리지 않고 투명하게 설명하며, 최적의 해결책을 함께 찾아가는 <strong>감각 설계 컨설팅 공간</strong>입니다.
+                    </p>
+                    <p>
+                        우리는 "잘 보이는 안경"이 아닌 <strong>"편안하게 쓰는 안경"</strong>을 만듭니다.
+                    </p>
+                </div>
+                <div class="content-image">
+                    <img src="images/store_exterior.jpg" alt="언커버 안경원 외관">
+                </div>
+            </div>
         </div>
-        
-        <div class="footer__section">
-          <h3 class="footer__section-title">메뉴</h3>
-          <ul class="footer__links">
-            <li><a href="about.html" class="footer__link">ABOUT</a></li>
-            <li><a href="experience.html" class="footer__link">EXPERIENCE</a></li>
-            <li><a href="solution.html" class="footer__link">SOLUTION</a></li>
-            <li><a href="academy.html" class="footer__link">ACADEMY</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer__section">
-          <h3 class="footer__section-title">서비스</h3>
-          <ul class="footer__links">
-            <li><a href="https://booking.naver.com/booking/6/bizes/141576" target="_blank" class="footer__link">네이버 예약</a></li>
-            <li><a href="http://pf.kakao.com/_MRZhC" target="_blank" class="footer__link">카카오톡 상담</a></li>
-            <li><a href="contact.html" class="footer__link">오시는 길</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer__section">
-          <h3 class="footer__section-title">연락처</h3>
-          <ul class="footer__links">
-            <li class="footer__link">서울특별시 강남구</li>
-            <li class="footer__link">TEL: 02-XXXX-XXXX</li>
-            <li class="footer__link">영업시간: 10:00 - 20:00</li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="footer__bottom">
-        <p>&copy; 2026 UNCOVER Optical. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+    </section>
 
-  <script>
-    window.addEventListener('scroll', () => {
-      const header = document.getElementById('header');
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
+    <!-- 핵심 가치 -->
+    <section class="section content-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>언커버의 두 가지 키워드</h2>
+                <p>발전과 공감</p>
+            </div>
 
-    const navToggle = document.getElementById('navToggle');
-    const nav = document.getElementById('nav');
-    navToggle.addEventListener('click', () => {
-      nav.classList.toggle('active');
-    });
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>발전 (Development)</h3>
+                    <p>
+                        안주하지 않고 계속 공부하고 연구합니다. 브리핑 검사 방식도 끊임없이 수정을 거쳐 지금의 완성 단계에 이르렀습니다.
+                    </p>
+                    <p>
+                        안경사 포럼, 언커버 아카데미, 주 1회 이상의 내부 교육을 통해 모든 안경사가 동일한 수준의 전문성을 유지합니다.
+                    </p>
+                </div>
 
-    if (window.innerWidth <= 768) {
-      document.querySelectorAll('.has-dropdown > .nav__link').forEach(link => {
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          link.parentElement.classList.toggle('active');
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>공감 (Empathy)</h3>
+                    <p>
+                        정보 전달이 아닌, 경험과 시각화를 통해 이해를 극대화합니다. 브리핑 검안, 누진렌즈 체험, 피팅 과정 설명 등 모든 과정이 투명하게 공유됩니다.
+                    </p>
+                    <p>
+                        고객님이 직접 체험하고, 비교하며, 납득할 수 있을 때 비로소 진정한 공감이 이루어집니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 역사 타임라인 -->
+    <section class="section bg-white">
+        <div class="container">
+            <div class="section-title">
+                <h2>언커버의 여정</h2>
+                <p>작은 안경원에서 기준을 만드는 공간으로</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1999</div>
+                        <div class="timeline-description">
+                            추효성 대표, 안경사 면허 취득 및 실무 시작
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2005</div>
+                        <div class="timeline-description">
+                            "안경사 공부모임" 다음 카페 활동 시작. 동료 안경사들과의 토론과 연구가 언커버 철학의 기반이 됨
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2012</div>
+                        <div class="timeline-description">
+                            차이역(JND) 기반 브리핑 검안 시스템 개발 착수. 고객 참여형 검안 프로세스 구축
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2018</div>
+                        <div class="timeline-description">
+                            언커버 안경원 설립 (서울 중구 동호로). "가리지 않고 보여드립니다"라는 철학으로 출발
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2020~</div>
+                        <div class="timeline-description">
+                            안경사 포럼 운영 시작 (연 100명 이상 참석), 언커버 아카데미 정식 개원, 검안광학회 기고
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">현재</div>
+                        <div class="timeline-description">
+                            전문가를 가르치는 권위, 감각 설계 검안, 체험 중심 시스템을 갖춘 컨설팅형 안경원으로 성장
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 전문성 강조 -->
+    <section class="section content-section">
+        <div class="container">
+            <div class="content-block reverse">
+                <div class="content-text">
+                    <h2>안경은 도구,<br>결과는 안경사의 해석</h2>
+                    <p>
+                        같은 검안 장비를 사용하더라도, 결과는 안경사의 해석에 따라 달라집니다.
+                    </p>
+                    <p>
+                        언커버는 차이역(JND), 양안시 균형, 누진렌즈 설계, 프레임 피팅까지 <strong>모든 변수를 수치화하고 객관화</strong>하여 최적의 교정 값을 도출합니다.
+                    </p>
+                    <p>
+                        이 과정을 고객님과 함께 확인하고, 이해하며, 납득하는 것이 언커버의 방식입니다.
+                    </p>
+                </div>
+                <div class="content-image">
+                    <img src="images/glass_writing.jpg" alt="검안 과정">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 교육 권위 -->
+    <section class="section bg-white">
+        <div class="container">
+            <div class="section-title">
+                <h2>전문가가 배우러 오는 이유</h2>
+                <p>현직 안경사를 대상으로 한 교육 활동</p>
+            </div>
+
+            <div class="content-block">
+                <div class="content-image">
+                    <img src="images/academy_books.jpg" alt="아카데미 자료">
+                </div>
+                <div class="content-text">
+                    <h3>안경사 포럼 & 아카데미</h3>
+                    <p>
+                        언커버는 매년 100명 이상의 현직 안경사가 참석하는 <strong>안경사 포럼</strong>을 운영하며, 실무 중심의 임상 교육을 제공하는 <strong>언커버 아카데미</strong>를 정식 개원했습니다.
+                    </p>
+                    <p>
+                        브리핑 검안, 임상 양안시, 안경렌즈 전문가 과정 등 3개월 과정의 체계적인 교육을 통해, 안경사들이 현장에서 바로 적용할 수 있는 실질적인 기준을 세우고 있습니다.
+                    </p>
+                    <p>
+                        검안광학회 기고, 포럼 발표 등 학술 활동도 지속하고 있습니다.
+                    </p>
+                    <a href="academy.html" class="btn btn-primary mt-2">교육 프로그램 자세히 보기</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 내부 교육 -->
+    <section class="section content-section">
+        <div class="container">
+            <div class="content-block reverse">
+                <div class="content-text">
+                    <h3>모든 안경사가 동일한 수준의 서비스를 제공합니다</h3>
+                    <p>
+                        전문적인 접근을 위해서는 높은 수준의 일관성이 필요합니다. 언커버는 <strong>주 1회 이상 내부 교육</strong>을 진행하여 모든 안경사가 동일한 검안 철학과 프로세스를 공유합니다.
+                    </p>
+                    <p>
+                        고객님이 어느 안경사를 만나시든, 언커버만의 브리핑 검안, 체험 시스템, 피팅 철학을 경험하실 수 있습니다.
+                    </p>
+                </div>
+                <div class="content-image">
+                    <img src="images/staff_study.jpg" alt="내부 교육 모습">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section section">
+        <div class="container">
+            <h2>기준을 만드는 안경원,<br>언커버를 직접 경험하세요</h2>
+            <p>감각 설계 검안과 체험 시스템을 통해 진짜 편안한 안경을 만나보세요.</p>
+            <a href="https://booking.naver.com/booking/6/bizes/141576" target="_blank" class="btn btn-cta">검안 예약하기</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>UNCOVER 언커버 안경원</h4>
+                    <p>서울시 중구 동호로 180</p>
+                    <p>대표: 추효성</p>
+                    <p>사업자등록번호: 633-18-00765</p>
+                    <p>전화: <a href="tel:010-7184-5569">010-7184-5569</a></p>
+                    <p>이메일: <a href="mailto:uncover2018@naver.com">uncover2018@naver.com</a></p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>메뉴</h4>
+                    <a href="about.html">ABOUT</a>
+                    <a href="experience.html">EXPERIENCE</a>
+                    <a href="solution.html">SOLUTION</a>
+                    <a href="academy.html">ACADEMY</a>
+                    <a href="contact.html">CONTACT</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4>서비스</h4>
+                    <a href="https://booking.naver.com/booking/6/bizes/141576" target="_blank">네이버 예약</a>
+                    <a href="http://pf.kakao.com/_MRZhC" target="_blank">카카오톡 상담</a>
+                    <a href="https://booking.naver.com/booking/6/bizes/141576" target="_blank">네이버 플레이스 (영업시간 확인)</a>
+                    <div class="social-links">
+                        <a href="https://blog.naver.com/uncover_ver2/" target="_blank" title="블로그">B</a>
+                        <a href="https://www.instagram.com/uncover_optical/" target="_blank" title="인스타그램">I</a>
+                        <a href="https://youtube.com/channel/UCwtkhxlApDpmXNgMjLkmv-g" target="_blank" title="유튜브">Y</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 UNCOVER OPTICAL. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
         });
-      });
-    }
-  </script>
-  
+
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
