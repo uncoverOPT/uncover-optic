@@ -1,263 +1,199 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="언커버 안경원 연락처 및 오시는 길. 예약 및 문의.">
-  <title>CONTACT - 언커버 안경원</title>
-  
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="images/logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="언커버 안경원 예약 및 방문 안내. 네이버 예약, 카카오톡 상담, 오시는 길">
+    <title>CONTACT - UNCOVER 언커버 안경원</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
-  <header class="header" id="header">
-    <div class="header__container">
-      <a href="index.html" class="logo">
-        <img src="images/logo.png" alt="UNCOVER Logo">
-        <span>UNCOVER</span>
-      </a>
-      
-      <nav class="nav" id="nav">
-        <ul class="nav__menu">
-          <li class="nav__item">
-            <a href="index.html" class="nav__link">HOME</a>
-          </li>
-          <li class="nav__item">
-            <a href="about.html" class="nav__link">ABOUT</a>
-          </li>
-          <li class="nav__item has-dropdown">
-            <a href="experience.html" class="nav__link has-dropdown">EXPERIENCE</a>
-            <ul class="dropdown">
-              <li><a href="experience-briefing.html" class="dropdown__link">사전 브리핑</a></li>
-              <li><a href="experience-dizziness.html" class="dropdown__link">어지럼증 상담</a></li>
-              <li><a href="experience-progressive.html" class="dropdown__link">누진렌즈 전문</a></li>
-              <li><a href="experience-fitting.html" class="dropdown__link">정밀 피팅</a></li>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="UNCOVER Logo"><span>UNCOVER</span></a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li class="dropdown">
+                    <a href="experience.html">EXPERIENCE</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="experience-briefing.html">브리핑 검안</a></li>
+                        <li><a href="experience-dizziness.html">어지러움 해결</a></li>
+                        <li><a href="experience-progressive.html">누진 체험</a></li>
+                        <li><a href="experience-fitting.html">피팅 시스템</a></li>
+                    </ul>
+                </li>
+                <li><a href="solution.html">SOLUTION</a></li>
+                <li class="dropdown">
+                    <a href="academy.html">ACADEMY</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="academy-forum.html">안경사 포럼</a></li>
+                        <li><a href="academy-education.html">언커버 아카데미</a></li>
+                        <li><a href="academy-internal.html">내부 교육</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html" class="active">CONTACT</a></li>
+                <li><a href="https://booking.naver.com/booking/6/bizes/141576" target="_blank" class="nav-cta">예약하기</a></li>
             </ul>
-          </li>
-          <li class="nav__item has-dropdown">
-            <a href="solution.html" class="nav__link has-dropdown">SOLUTION</a>
-            <ul class="dropdown">
-              <li><a href="solution-occupation.html" class="dropdown__link">직업별 맞춤</a></li>
-              <li><a href="solution-age.html" class="dropdown__link">연령별 솔루션</a></li>
-              <li><a href="solution-symptom.html" class="dropdown__link">증상별 처방</a></li>
-              <li><a href="solution-lens.html" class="dropdown__link">특수렌즈</a></li>
-            </ul>
-          </li>
-          <li class="nav__item has-dropdown">
-            <a href="academy.html" class="nav__link has-dropdown ">ACADEMY</a>
-            <ul class="dropdown">
-              <li><a href="academy-forum.html" class="dropdown__link">검안포럼</a></li>
-              <li><a href="academy-education.html" class="dropdown__link">언커버 아카데미</a></li>
-              <li><a href="academy-internal.html" class="dropdown__link">내부 교육</a></li>
-            </ul>
-          </li>
-          <li class="nav__item">
-            <a href="contact.html" class="nav__link active">CONTACT</a>
-          </li>
-        </ul>
-        <a href="https://booking.naver.com/booking/6/bizes/141576" target="_blank" class="nav__cta">네이버 예약</a>
-      </nav>
-      
-      <button class="nav__toggle" id="navToggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </header>
-
-  <section class="hero" style="min-height: 400px;">
-    <img src="images/store_exterior.jpg" alt="UNCOVER Contact" class="hero__background">
-    <div class="hero__content">
-      <h1 class="hero__title">
-        CONTACT <span class="highlight">US</span>
-      </h1>
-      <p class="hero__subtitle">
-        언제든 문의하세요
-      </p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="grid grid--2" style="gap: 48px; max-width: 1000px; margin: 0 auto;">
-        <div>
-          <h3 style="font-size: 28px; font-weight: 700; margin-bottom: 24px;">오시는 길</h3>
-          
-          <div style="padding: 32px; background-color: var(--bg-light); border-radius: var(--border-radius); margin-bottom: 32px;">
-            <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 16px; color: var(--primary);">📍 주소</h4>
-            <p style="font-size: 16px; line-height: 1.8; color: var(--text-primary); margin-bottom: 8px;">
-              서울특별시 강남구
-            </p>
-            <p style="font-size: 14px; color: var(--text-secondary);">
-              (지하철 2호선 강남역 3번 출구 도보 5분)
-            </p>
-          </div>
-          
-          <div style="padding: 32px; background-color: var(--bg-light); border-radius: var(--border-radius); margin-bottom: 32px;">
-            <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 16px; color: var(--primary);">📞 연락처</h4>
-            <p style="font-size: 16px; line-height: 1.8; color: var(--text-primary); margin-bottom: 8px;">
-              <strong>전화:</strong> 02-XXXX-XXXX
-            </p>
-            <p style="font-size: 16px; line-height: 1.8; color: var(--text-primary); margin-bottom: 8px;">
-              <strong>카카오톡:</strong> <a href="http://pf.kakao.com/_MRZhC" target="_blank" style="color: var(--primary); text-decoration: underline;">@언커버안경원</a>
-            </p>
-            <p style="font-size: 16px; line-height: 1.8; color: var(--text-primary);">
-              <strong>이메일:</strong> info@uncover.com
-            </p>
-          </div>
-          
-          <div style="padding: 32px; background-color: var(--bg-light); border-radius: var(--border-radius); margin-bottom: 32px;">
-            <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 16px; color: var(--primary);">⏰ 영업시간</h4>
-            <p style="font-size: 16px; line-height: 1.8; color: var(--text-primary); margin-bottom: 8px;">
-              <strong>평일:</strong> 10:00 - 20:00
-            </p>
-            <p style="font-size: 16px; line-height: 1.8; color: var(--text-primary); margin-bottom: 8px;">
-              <strong>토요일:</strong> 10:00 - 18:00
-            </p>
-            <p style="font-size: 16px; line-height: 1.8; color: var(--text-primary); margin-bottom: 8px;">
-              <strong>일요일:</strong> 휴무
-            </p>
-            <p style="font-size: 14px; color: var(--text-secondary); margin-top: 12px;">
-              * 점심시간 13:00-14:00 (예약 고객 우선)
-            </p>
-          </div>
-          
-          <div style="padding: 32px; background-color: var(--primary-pale); border-radius: var(--border-radius);">
-            <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 16px;">🚗 주차 안내</h4>
-            <p style="font-size: 15px; line-height: 1.8; color: var(--text-primary);">
-              건물 지하 주차장 이용 가능<br>
-              방문 고객 1시간 무료
-            </p>
-          </div>
+            <div class="mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></div>
         </div>
-        
-        <div>
-          <h3 style="font-size: 28px; font-weight: 700; margin-bottom: 24px;">상담 예약</h3>
-          
-          <div style="padding: 40px; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); border-radius: var(--border-radius); color: white; margin-bottom: 32px;">
-            <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 16px;">네이버 예약</h4>
-            <p style="font-size: 15px; line-height: 1.8; margin-bottom: 24px; opacity: 0.9;">
-              원하는 날짜와 시간을 선택하고<br>
-              편리하게 예약하세요.
-            </p>
-            <a href="https://booking.naver.com/booking/6/bizes/141576" target="_blank" class="btn" style="background-color: white; color: var(--primary); display: inline-block; width: 100%; text-align: center;">
-              네이버 예약하기 →
-            </a>
-          </div>
-          
-          <div style="padding: 40px; background-color: #FEE500; border-radius: var(--border-radius); margin-bottom: 32px;">
-            <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 16px; color: #3C1E1E;">카카오톡 상담</h4>
-            <p style="font-size: 15px; line-height: 1.8; margin-bottom: 24px; color: #3C1E1E;">
-              실시간 채팅으로<br>
-              간편하게 문의하세요.
-            </p>
-            <a href="http://pf.kakao.com/_MRZhC" target="_blank" class="btn" style="background-color: #3C1E1E; color: white; display: inline-block; width: 100%; text-align: center;">
-              카카오톡 상담하기 →
-            </a>
-          </div>
-          
-          <div style="padding: 32px; background-color: var(--accent-warm); border-radius: var(--border-radius);">
-            <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 16px;">💡 방문 전 TIP</h4>
-            <ul style="list-style: none; padding: 0; line-height: 2; color: var(--text-primary);">
-              <li>✓ 예약 시 대기 시간 최소화</li>
-              <li>✓ 기존 안경 지참 권장</li>
-              <li>✓ 충분한 상담 시간 확보</li>
-              <li>✓ 렌즈 교체 시 1시간 소요</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </nav>
 
-  <section class="section" style="background-color: var(--bg-section);">
-    <div class="container" style="text-align: center;">
-      <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 16px;">
-        언커버에서 만나요
-      </h2>
-      <p style="font-size: 18px; color: var(--text-secondary); line-height: 1.8; max-width: 600px; margin: 0 auto;">
-        20년 경력의 전문가가<br>
-        당신의 눈 건강을 책임집니다.
-      </p>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="footer__container">
-      <div class="footer__main">
-        <div class="footer__brand">
-          <div class="footer__logo">
-            <img src="images/logo.png" alt="UNCOVER Logo">
-            <span>UNCOVER</span>
-          </div>
-          <p class="footer__description">
-            1999년부터 시작된 전문 안경원.<br>
-            정확한 검안과 맞춤 상담으로 당신의 시력을 책임집니다.
-          </p>
+    <section class="page-hero">
+        <div class="container">
+            <h1>예약 및 방문 안내</h1>
+            <p>정밀한 감각 설계를 위해 예약제로 운영됩니다</p>
         </div>
-        
-        <div class="footer__section">
-          <h3 class="footer__section-title">메뉴</h3>
-          <ul class="footer__links">
-            <li><a href="about.html" class="footer__link">ABOUT</a></li>
-            <li><a href="experience.html" class="footer__link">EXPERIENCE</a></li>
-            <li><a href="solution.html" class="footer__link">SOLUTION</a></li>
-            <li><a href="academy.html" class="footer__link">ACADEMY</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer__section">
-          <h3 class="footer__section-title">서비스</h3>
-          <ul class="footer__links">
-            <li><a href="https://booking.naver.com/booking/6/bizes/141576" target="_blank" class="footer__link">네이버 예약</a></li>
-            <li><a href="http://pf.kakao.com/_MRZhC" target="_blank" class="footer__link">카카오톡 상담</a></li>
-            <li><a href="contact.html" class="footer__link">오시는 길</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer__section">
-          <h3 class="footer__section-title">연락처</h3>
-          <ul class="footer__links">
-            <li class="footer__link">서울특별시 강남구</li>
-            <li class="footer__link">TEL: 02-XXXX-XXXX</li>
-            <li class="footer__link">영업시간: 10:00 - 20:00</li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="footer__bottom">
-        <p>&copy; 2026 UNCOVER Optical. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+    </section>
 
-  <script>
-    window.addEventListener('scroll', () => {
-      const header = document.getElementById('header');
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
+    <section class="section bg-white">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2 style="margin-bottom: 2rem;">언커버 안경원</h2>
+                    
+                    <div class="contact-item">
+                        <h4>주소</h4>
+                        <p>서울시 중구 동호로 180</p>
+                    </div>
 
-    const navToggle = document.getElementById('navToggle');
-    const nav = document.getElementById('nav');
-    navToggle.addEventListener('click', () => {
-      nav.classList.toggle('active');
-    });
+                    <div class="contact-item">
+                        <h4>대표</h4>
+                        <p>추효성 안경사</p>
+                    </div>
 
-    if (window.innerWidth <= 768) {
-      document.querySelectorAll('.has-dropdown > .nav__link').forEach(link => {
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          link.parentElement.classList.toggle('active');
+                    <div class="contact-item">
+                        <h4>전화</h4>
+                        <p><a href="tel:010-7184-5569">010-7184-5569</a></p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h4>이메일</h4>
+                        <p><a href="mailto:uncover2018@naver.com">uncover2018@naver.com</a></p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h4>운영 안내</h4>
+                        <p style="color: #2a9d8f; font-weight: 500;">실시간 영업시간 및 휴무일은 <br><a href="https://booking.naver.com/booking/6/bizes/141576" target="_blank" style="text-decoration: underline;">네이버 플레이스</a>에서 확인하실 수 있습니다.</p>
+                        <p style="margin-top: 1rem; font-size: 0.9rem; color: #888;">※ 정밀한 검안을 위해 예약제로 운영됩니다</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="margin-bottom: 1.5rem;">빠른 예약 및 상담</h3>
+                    
+                    <a href="https://booking.naver.com/booking/6/bizes/141576" target="_blank" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem; display: block; text-align: center;">
+                        네이버로 예약하기
+                    </a>
+
+                    <a href="http://pf.kakao.com/_MRZhC" target="_blank" class="btn btn-secondary" style="width: 100%; display: block; text-align: center;">
+                        카카오톡 상담하기
+                    </a>
+
+                    <div style="margin-top: 2rem; padding: 1.5rem; background-color: #f5f1e8; border-radius: 8px;">
+                        <h4 style="margin-bottom: 1rem; color: #2a9d8f;">예약 안내</h4>
+                        <ul style="list-style: none; padding: 0; line-height: 1.8; color: #4a4a4a;">
+                            <li>✓ 브리핑 검안: 약 60분 소요</li>
+                            <li>✓ 누진렌즈 체험: 약 30분 소요</li>
+                            <li>✓ 예약 변경/취소는 최소 1일 전 연락</li>
+                            <li>✓ 첫 방문 시 이전 안경 지참 권장</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map -->
+    <section class="section content-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem;">오시는 길</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.0!2d127.009!3d37.527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDMxJzM3LjIiTiAxMjfCsDAwJzMyLjQiRQ!5e0!3m2!1sko!2skr!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <p style="text-align: center; margin-top: 1.5rem; color: #6a6a6a;">서울시 중구 동호로 180 (주차 가능)</p>
+        </div>
+    </section>
+
+    <!-- Social Links -->
+    <section class="section bg-white">
+        <div class="container" style="text-align: center;">
+            <h2 style="margin-bottom: 1.5rem;">언커버 소식</h2>
+            <p style="margin-bottom: 2rem; color: #6a6a6a;">블로그, 인스타그램, 유튜브에서 언커버의 다양한 소식을 만나보세요</p>
+            
+            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                <a href="https://blog.naver.com/uncover_ver2/" target="_blank" style="display: flex; flex-direction: column; align-items: center; text-decoration: none; color: inherit;">
+                    <div style="width: 80px; height: 80px; background-color: #2a9d8f; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; margin-bottom: 0.5rem;">📝</div>
+                    <span style="font-weight: 500;">블로그</span>
+                </a>
+
+                <a href="https://www.instagram.com/uncover_optical/" target="_blank" style="display: flex; flex-direction: column; align-items: center; text-decoration: none; color: inherit;">
+                    <div style="width: 80px; height: 80px; background-color: #2a9d8f; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; margin-bottom: 0.5rem;">📷</div>
+                    <span style="font-weight: 500;">인스타그램</span>
+                </a>
+
+                <a href="https://youtube.com/channel/UCwtkhxlApDpmXNgMjLkmv-g" target="_blank" style="display: flex; flex-direction: column; align-items: center; text-decoration: none; color: inherit;">
+                    <div style="width: 80px; height: 80px; background-color: #2a9d8f; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; margin-bottom: 0.5rem;">🎥</div>
+                    <span style="font-weight: 500;">유튜브</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>UNCOVER 언커버 안경원</h4>
+                    <p>서울시 중구 동호로 180</p>
+                    <p>대표: 추효성</p>
+                    <p>사업자등록번호: 633-18-00765</p>
+                    <p>전화: <a href="tel:010-7184-5569">010-7184-5569</a></p>
+                    <p>이메일: <a href="mailto:uncover2018@naver.com">uncover2018@naver.com</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>메뉴</h4>
+                    <a href="about.html">ABOUT</a>
+                    <a href="experience.html">EXPERIENCE</a>
+                    <a href="solution.html">SOLUTION</a>
+                    <a href="academy.html">ACADEMY</a>
+                    <a href="contact.html">CONTACT</a>
+                </div>
+                <div class="footer-section">
+                    <h4>서비스</h4>
+                    <a href="https://booking.naver.com/booking/6/bizes/141576" target="_blank">네이버 예약</a>
+                    <a href="http://pf.kakao.com/_MRZhC" target="_blank">카카오톡 상담</a>
+                    <a href="https://booking.naver.com/booking/6/bizes/141576" target="_blank">네이버 플레이스 (영업시간 확인)</a>
+                    <div class="social-links">
+                        <a href="https://blog.naver.com/uncover_ver2/" target="_blank" title="블로그">B</a>
+                        <a href="https://www.instagram.com/uncover_optical/" target="_blank" title="인스타그램">I</a>
+                        <a href="https://youtube.com/channel/UCwtkhxlApDpmXNgMjLkmv-g" target="_blank" title="유튜브">Y</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 UNCOVER OPTICAL. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) { navbar.classList.add('scrolled'); } else { navbar.classList.remove('scrolled'); }
         });
-      });
-    }
-  </script>
-  
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+        mobileToggle.addEventListener('click', () => { navMenu.classList.toggle('active'); });
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => { link.addEventListener('click', () => { navMenu.classList.remove('active'); }); });
+    </script>
 </body>
 </html>
