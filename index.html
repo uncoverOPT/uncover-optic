@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UNCOVER Optical Eyewear | 언커버 안경원</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='16' fill='%232a9d8f'/><text x='6' y='22' font-size='16' fill='white' font-family='sans-serif' font-weight='700'>OO</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --teal: #2a9d8f;
+      --teal-dark: #1f7a70;
+      --teal-light: #4dbcb0;
+      --teal-pale: #e8f5f3;
+      --oak: #c4a882;
+      --oak-light: #e8d5b7;
+      --white: #ffffff;
+      --off-white: #f9f7f4;
+      --text-dark: #1a1a1a;
+      --text-mid: #444444;
+      --text-light: #888888;
+      --border: #e8e0d5;
+      --font-title: 'Gowun Dodum', serif;
+      --font-body: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); color: var(--text-dark); background: var(--white); overflow-x: hidden; }
+
+    /* ─── NOTICE BANNER ─── */
+    #notice-banner {
+      background: var(--teal);
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 13px;
+      letter-spacing: 0.03em;
+      position: relative;
+      z-index: 1000;
+    }
+    #notice-banner a { color: #b2ede7; text-decoration: underline; }
+    #close-banner {
+      position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+      background: none; border: none; color: white; font-size: 18px; cursor: pointer;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 999;
+      transition: top 0.3s;
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 24px; height: 64px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none;
+    }
+    .nav-logo-icon {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--teal);
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-size: 12px; font-weight: 700; letter-spacing: -0.5px;
+    }
+    .nav-logo-text { font-family: var(--font-title); font-size: 16px; color: var(--text-dark); letter-spacing: 0.05em; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--text-mid); font-size: 14px; font-weight: 500; letter-spacing: 0.02em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-cta {
+      background: var(--teal); color: white;
+      padding: 10px 22px; border-radius: 4px;
+      text-decoration: none; font-size: 13px; font-weight: 600;
+      letter-spacing: 0.05em; transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--teal-dark); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 24px; height: 2px; background: var(--text-dark); display: block; transition: all 0.3s; }
+
+    /* ─── HERO ─── */
+    #home {
+      min-height: 100vh;
+      background: var(--off-white);
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('https://www.genspark.ai/api/files/s/8MCToOu6');
+      background-size: cover; background-position: center;
+      opacity: 0.18;
+    }
+    .hero-inner {
+      max-width: 1200px; margin: 0 auto; padding: 120px 24px 80px;
+      position: relative; z-index: 1;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    }
+    .hero-left {}
+    .hero-badge {
+      display: inline-block;
+      background: var(--teal-pale); color: var(--teal);
+      font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
+      padding: 6px 14px; border-radius: 20px; margin-bottom: 28px;
+      text-transform: uppercase;
+    }
+    .hero-title {
+      font-family: var(--font-title);
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      line-height: 1.3; color: var(--text-dark);
+      margin-bottom: 12px;
+    }
+    .hero-title span { color: var(--teal); }
+    .hero-sub {
+      font-size: clamp(1rem, 1.8vw, 1.25rem);
+      color: var(--text-mid); font-weight: 300;
+      margin-bottom: 24px; line-height: 1.6;
+    }
+    .hero-question {
+      font-size: 14px; color: var(--text-light);
+      background: white; border-left: 3px solid var(--teal);
+      padding: 12px 16px; border-radius: 0 6px 6px 0;
+      margin-bottom: 36px; line-height: 1.7;
+    }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--teal); color: white;
+      padding: 14px 32px; border-radius: 4px;
+      text-decoration: none; font-size: 14px; font-weight: 600;
+      letter-spacing: 0.05em; transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--teal-dark); }
+    .btn-secondary {
+      background: white; color: var(--teal);
+      border: 1.5px solid var(--teal);
+      padding: 14px 32px; border-radius: 4px;
+      text-decoration: none; font-size: 14px; font-weight: 600;
+      letter-spacing: 0.05em; transition: all 0.2s;
+    }
+    .btn-secondary:hover { background: var(--teal-pale); }
+    .hero-right {
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .hero-card {
+      background: white; border-radius: 12px;
+      padding: 20px 24px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+      display: flex; gap: 16px; align-items: flex-start;
+      border: 1px solid var(--border);
+    }
+    .hero-card-icon {
+      width: 42px; height: 42px; border-radius: 10px;
+      background: var(--teal-pale); color: var(--teal);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; flex-shrink: 0;
+    }
+    .hero-card-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+    .hero-card-desc { font-size: 12px; color: var(--text-light); line-height: 1.6; }
+
+    /* ─── SECTION COMMON ─── */
+    section { padding: 100px 24px; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-tag {
+      display: inline-block;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.15em;
+      color: var(--teal); text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: var(--font-title);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      line-height: 1.35; color: var(--text-dark);
+      margin-bottom: 16px;
+    }
+    .section-desc {
+      font-size: 15px; color: var(--text-mid);
+      line-height: 1.8; max-width: 600px;
+      margin-bottom: 60px;
+    }
+    .divider { width: 40px; height: 3px; background: var(--teal); margin: 20px 0 40px; }
+
+    /* ─── ABOUT ─── */
+    #about { background: var(--white); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .about-img-wrap { position: relative; border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; }
+    .about-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .about-img-badge {
+      position: absolute; bottom: 20px; left: 20px;
+      background: var(--teal); color: white;
+      padding: 10px 18px; border-radius: 8px;
+      font-size: 13px; font-weight: 600;
+    }
+    .about-values { display: flex; flex-direction: column; gap: 28px; margin-top: 40px; }
+    .about-value { display: flex; gap: 16px; }
+    .about-value-num {
+      font-size: 13px; font-weight: 700; color: var(--teal);
+      min-width: 24px; padding-top: 2px;
+    }
+    .about-value-title { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .about-value-desc { font-size: 13px; color: var(--text-light); line-height: 1.7; }
+
+    /* ─── EXPERIENCE ─── */
+    #experience { background: var(--off-white); }
+    .exp-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 48px; }
+    .exp-tab {
+      padding: 10px 22px; border-radius: 30px;
+      border: 1.5px solid var(--border);
+      font-size: 13px; font-weight: 600; cursor: pointer;
+      background: white; color: var(--text-mid);
+      transition: all 0.2s;
+    }
+    .exp-tab.active, .exp-tab:hover { background: var(--teal); color: white; border-color: var(--teal); }
+    .exp-panels {}
+    .exp-panel { display: none; }
+    .exp-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .exp-img-wrap { border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; }
+    .exp-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .exp-content-tag { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; }
+    .exp-content-title { font-family: var(--font-title); font-size: 1.6rem; margin-bottom: 16px; line-height: 1.4; }
+    .exp-content-desc { font-size: 14px; color: var(--text-mid); line-height: 1.9; margin-bottom: 24px; }
+    .exp-points { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .exp-points li {
+      display: flex; gap: 10px; align-items: flex-start;
+      font-size: 13px; color: var(--text-mid); line-height: 1.6;
+    }
+    .exp-points li::before { content: '—'; color: var(--teal); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+    /* ─── SOLUTION ─── */
+    #solution { background: var(--white); }
+    .solution-intro { text-align: center; margin-bottom: 64px; }
+    .solution-intro .section-title { margin: 0 auto; }
+    .solution-intro .section-desc { margin: 16px auto 0; text-align: center; }
+    .solution-intro .divider { margin: 20px auto 0; }
+    .solution-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 64px; }
+    .solution-card {
+      background: var(--off-white); border-radius: 16px;
+      padding: 32px 28px; border: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+    .solution-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(42,157,143,0.12); border-color: var(--teal-light); }
+    .solution-icon { font-size: 32px; margin-bottom: 18px; }
+    .solution-label { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
+    .solution-title { font-family: var(--font-title); font-size: 1.1rem; margin-bottom: 12px; line-height: 1.4; }
+    .solution-desc { font-size: 13px; color: var(--text-light); line-height: 1.8; }
+    .solution-compare {
+      background: var(--off-white); border-radius: 16px; padding: 48px;
+      border: 1px solid var(--border);
+    }
+    .compare-title { font-family: var(--font-title); font-size: 1.3rem; text-align: center; margin-bottom: 36px; }
+    .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .compare-col { padding: 28px; border-radius: 12px; }
+    .compare-col.before { background: #f0f0f0; }
+    .compare-col.after { background: var(--teal-pale); }
+    .compare-col-title { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; margin-bottom: 20px; }
+    .compare-col.before .compare-col-title { color: var(--text-light); }
+    .compare-col.after .compare-col-title { color: var(--teal); }
+    .compare-items { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .compare-items li { font-size: 13px; line-height: 1.6; display: flex; gap: 8px; }
+    .compare-col.before .compare-items li::before { content: '✕'; color: #aaa; flex-shrink: 0; }
+    .compare-col.after .compare-items li::before { content: '✓'; color: var(--teal); font-weight: 700; flex-shrink: 0; }
+
+    /* ─── ACADEMY ─── */
+    #academy { background: var(--off-white); }
+    .academy-tabs { display: flex; border-bottom: 2px solid var(--border); margin-bottom: 48px; gap: 0; }
+    .academy-tab {
+      padding: 14px 28px; font-size: 14px; font-weight: 600;
+      color: var(--text-light); cursor: pointer; border-bottom: 2px solid transparent;
+      margin-bottom: -2px; transition: all 0.2s; white-space: nowrap;
+    }
+    .academy-tab.active { color: var(--teal); border-bottom-color: var(--teal); }
+    .academy-panels {}
+    .academy-panel { display: none; }
+    .academy-panel.active { display: block; }
+    .academy-panel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .academy-img-wrap { border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; }
+    .academy-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .academy-content-title { font-family: var(--font-title); font-size: 1.7rem; margin-bottom: 16px; line-height: 1.4; }
+    .academy-content-desc { font-size: 14px; color: var(--text-mid); line-height: 1.9; margin-bottom: 28px; }
+    .academy-sub-items { display: flex; flex-direction: column; gap: 16px; }
+    .academy-sub-item {
+      border-left: 3px solid var(--teal); padding: 12px 16px;
+      background: white; border-radius: 0 8px 8px 0;
+    }
+    .academy-sub-item-title { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+    .academy-sub-item-desc { font-size: 12px; color: var(--text-light); line-height: 1.6; }
+    .internal-edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .internal-edu-img { border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; }
+    .internal-edu-img img { width: 100%; height: 100%; object-fit: cover; }
+    .internal-edu-keyword {
+      display: inline-block; background: var(--teal-pale); color: var(--teal);
+      font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 4px;
+      letter-spacing: 0.05em; margin-bottom: 16px;
+    }
+
+    /* ─── CONTACT ─── */
+    #contact { background: var(--text-dark); }
+    .contact-inner { max-width: 1200px; margin: 0 auto; }
+    .contact-top { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 60px; }
+    .contact-left .section-tag { color: var(--teal-light); }
+    .contact-left .section-title { color: white; }
+    .contact-left .section-desc { color: #999; margin-bottom: 32px; }
+    .contact-cta-note {
+      font-size: 13px; color: #888; line-height: 1.7;
+      border-left: 3px solid var(--teal); padding-left: 16px; margin-bottom: 36px;
+    }
+    .contact-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .contact-btn {
+      display: flex; align-items: center; gap: 10px;
+      padding: 14px 24px; border-radius: 8px;
+      text-decoration: none; font-size: 13px; font-weight: 600;
+      transition: all 0.2s;
+    }
+    .contact-btn.naver { background: #03c75a; color: white; }
+    .contact-btn.naver:hover { background: #02b050; }
+    .contact-btn.kakao { background: #fee500; color: #3c1e1e; }
+    .contact-btn.kakao:hover { background: #ffd700; }
+    .contact-btn-icon { font-size: 18px; }
+    .contact-info { display: flex; flex-direction: column; gap: 20px; }
+    .contact-info-item {
+      display: flex; gap: 16px;
+      padding: 20px; background: rgba(255,255,255,0.05);
+      border-radius: 12px; border: 1px solid rgba(255,255,255,0.08);
+    }
+    .contact-info-icon { font-size: 22px; width: 40px; flex-shrink: 0; }
+    .contact-info-label { font-size: 11px; font-weight: 600; color: var(--teal-light); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; }
+    .contact-info-val { font-size: 14px; color: #ddd; line-height: 1.6; }
+    .contact-info-val a { color: var(--teal-light); text-decoration: none; }
+    .contact-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 40px; }
+    .social-links { display: flex; gap: 12px; flex-wrap: wrap; }
+    .social-link {
+      padding: 10px 18px; background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1); border-radius: 6px;
+      color: #ccc; text-decoration: none; font-size: 13px;
+      display: flex; align-items: center; gap: 8px;
+      transition: all 0.2s;
+    }
+    .social-link:hover { background: var(--teal); color: white; border-color: var(--teal); }
+    .naver-place-note {
+      margin-top: 20px; padding: 16px 20px;
+      background: rgba(255,255,255,0.04); border-radius: 8px;
+      font-size: 13px; color: #777; line-height: 1.7;
+    }
+    .naver-place-note a { color: var(--teal-light); text-decoration: underline; }
+    .footer-copy { text-align: right; font-size: 12px; color: #555; margin-top: 24px; }
+
+    /* ─── MOBILE NAV MENU ─── */
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; background: white;
+      z-index: 998; flex-direction: column; justify-content: center; align-items: center; gap: 32px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-size: 20px; color: var(--text-dark); text-decoration: none; font-weight: 600; }
+    .mobile-menu a:hover { color: var(--teal); }
+    .mobile-close {
+      position: absolute; top: 20px; right: 24px;
+      background: none; border: none; font-size: 28px; cursor: pointer;
+    }
+
+    /* ─── SCROLL FADE IN ─── */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .about-grid { grid-template-columns: 1fr; }
+      .exp-panel.active { grid-template-columns: 1fr; }
+      .solution-grid { grid-template-columns: 1fr; }
+      .compare-grid { grid-template-columns: 1fr; }
+      .academy-panel-grid { grid-template-columns: 1fr; }
+      .internal-edu-grid { grid-template-columns: 1fr; }
+      .contact-top { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .solution-compare { padding: 28px; }
+    }
+    @media (max-width: 600px) {
+      section { padding: 70px 20px; }
+      .hero-inner { padding: 100px 20px 60px; }
+      .academy-tabs { overflow-x: auto; }
+      .academy-tab { padding: 12px 18px; font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NOTICE BANNER -->
+<div id="notice-banner">
+  📣 실시간 영업시간 및 휴무 안내는
+  <a href="https://map.naver.com" target="_blank">네이버 플레이스</a>에서 확인하세요.
+  <button id="close-banner" aria-label="닫기">×</button>
+</div>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">
+      <div class="nav-logo-icon">OO</div>
+      <span class="nav-logo-text">UNCOVER</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#solution">Solution</a></li>
+      <li><a href="#academy">Academy</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="https://booking.naver.com/booking/6/bizes/141576" target="_blank" class="nav-cta">예약하기</a>
+    <div class="hamburger" id="hamburger" role="button" aria-label="메뉴">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-close" id="mobile-close">×</button>
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#experience" onclick="closeMobile()">Experience</a>
+  <a href="#solution" onclick="closeMobile()">Solution</a>
+  <a href="#academy" onclick="closeMobile()">Academy</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+  <a href="https://booking.naver.com/booking/6/bizes/141576" target="_blank" class="btn-primary">예약하기</a>
+</div>
+
+<!-- ══════════════════════════════════════
+     1. HOME — HERO
+══════════════════════════════════════ -->
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-left reveal">
+      <div class="hero-badge">UNCOVER Optical Eyewear</div>
+      <h1 class="hero-title">
+        가리지 않고<br><span>보여드립니다.</span>
+      </h1>
+      <p class="hero-sub">언커버 안경원</p>
+      <div class="hero-question">
+        안경을 맞춰도 불편했던 경험이 있으신가요?<br>
+        어지러움·적응 실패·이유 없는 눈의 피로…<br>
+        <strong>그 불편함에는 분명한 원인이 있습니다.</strong>
+      </div>
+      <div class="hero-btns">
+        <a href="https://booking.naver.com/booking/6/bizes/141576" target="_blank" class="btn-primary">예약하기</a>
+        <a href="#experience" class="btn-secondary">경험 알아보기</a>
+      </div>
+    </div>
+    <div class="hero-right reveal">
+      <div class="hero-card">
+        <div class="hero-card-icon">🎓</div>
+        <div>
+          <div class="hero-card-title">전문가가 배우러 오는 안경원</div>
+          <div class="hero-card-desc">안경사포럼 & 언커버아카데미 운영.<br>기준을 만드는 공간입니다.</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon">🔬</div>
+        <div>
+          <div class="hero-card-title">도수가 아닌 '적응'을 설계하는 검안</div>
+          <div class="hero-card-desc">차이역 검안과 브리핑 검안으로<br>편하게 쓰는 안경을 만듭니다.</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon">👓</div>
+        <div>
+          <div class="hero-card-title">직접 써보고 결정하는 체험 시스템</div>
+          <div class="hero-card-desc">누진렌즈 등급별 체험으로<br>설명이 아닌 경험으로 선택합니다.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     2. ABOUT — 브랜드 철학
+══════════════════════════════════════ -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal">
+        <img src="https://www.genspark.ai/api/files/s/8MCToOu6" alt="언커버 안경원 외관" loading="lazy" />
+        <div class="about-img-badge">UNCOVER; 가리지 않다.</div>
+      </div>
+      <div class="reveal">
+        <span class="section-tag">About</span>
+        <h2 class="section-title">기준을 만드는<br>안경원</h2>
+        <div class="divider"></div>
+        <p class="section-desc" style="margin-bottom:0">
+          안경은 도구입니다. 결과는 안경사의 해석에서 나옵니다.<br>
+          언커버안경원은 그동안 볼 수 없었던 것을 가리지 않고
+          보여드리는 것을 목표로 합니다.
+          말보다 직접 눈으로 확인할 수 있게 해드리겠습니다.
+        </p>
+        <div class="about-values">
+          <div class="about-value">
+            <span class="about-value-num">01</span>
+            <div>
+              <div class="about-value-title">권위 — 전문가가 배우러 오는 안경원</div>
+              <div class="about-value-desc">안경사포럼·언커버아카데미를 운영하며 현직 안경사들에게 검안과 조제가공 교육을 진행합니다.</div>
+            </div>
+          </div>
+          <div class="about-value">
+            <span class="about-value-num">02</span>
+            <div>
+              <div class="about-value-title">기술 — 도수가 아닌 적응을 설계하는 검안</div>
+              <div class="about-value-desc">차이역(JND) 기반 브리핑 검안으로 고객의 감각계가 편안하게 받아들이는 도수를 설계합니다.</div>
+            </div>
+          </div>
+          <div class="about-value">
+            <span class="about-value-num">03</span>
+            <div>
+              <div class="about-value-title">경험 — 상상이 아닌 검증으로 선택</div>
+              <div class="about-value-desc">누진다초점 등급별 체험 샘플로 직접 착용 후 결정합니다. Apple·Tesla처럼 경험 기반의 선택 구조입니다.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     3. EXPERIENCE — 검안 & 체험 시스템
+══════════════════════════════════════ -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center;margin-bottom:12px">
+      <span class="section-tag">Experience</span>
+    </div>
+    <h2 class="section-title reveal" style="text-align:center">검안 및 체험 시스템</h2>
+    <p class="section-desc reveal" style="text-align:center;margin:12px auto 48px">
+      언커버안경원 철학에 맞게 말보다 직접 경험할 수 있게 해드립니다.
+    </p>
+    <div class="exp-tabs reveal">
+      <button class="exp-tab active" data-target="exp-briefing">브리핑 검안</button>
+      <button class="exp-tab" data-target="exp-dizziness">어지러움 접근</button>
+      <button class="exp-tab" data-target="exp-progressive">누진다초점 체험</button>
+      <button class="exp-tab" data-target="exp-fitting">피팅 및 가공</button>
+    </div>
+    <div class="exp-panels">
+
+      <!-- 브리핑 검안 -->
+      <div class="exp-panel active" id="exp-briefing">
+        <div class="exp-img-wrap reveal">
+          <img src="https://www.genspark.ai/api/files/s/b7ACzkaj" alt="브리핑 검안 - 문진표" loading="lazy" />
+        </div>
+        <div class="reveal">
+          <div class="exp-content-tag">Briefing Eye Exam</div>
+          <h3 class="exp-content-title">고객도 참여하는<br>브리핑 검안</h3>
+          <p class="exp-content-desc">
+            안경사가 일방적으로 결정하는 도수가 아닌, 고객도 참여하여
+            정말 잘 맞는지 직접 확인할 수 있게 해드립니다.
+          </p>
+          <ul class="exp-points">
+            <li>브리핑 검안으로 고객과 안경사가 함께 도수 결정</li>
+            <li>안경렌즈 등급 차이를 체험으로 경험</li>
+            <li>왜곡검사기로 완벽한 가공 확인</li>
+            <li>피팅 과정도 브리핑 방식으로 설명</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 어지러움 -->
+      <div class="exp-panel" id="exp-dizziness">
+        <div class="exp-img-wrap reveal">
+          <img src="https://www.genspark.ai/api/files/s/y9y8V4EI" alt="검안 분석 화면" loading="lazy" />
+        </div>
+        <div class="reveal">
+          <div class="exp-content-tag">Dizziness Analysis</div>
+          <h3 class="exp-content-title">어지러움을<br>객관적으로 측정</h3>
+          <p class="exp-content-desc">
+            어지러움을 주관적 판단에만 의존하지 않습니다.
+            검안광학회와 안경사포럼에도 기고한 방법으로,
+            더 객관적인 측정 방법을 개발했습니다.
+          </p>
+          <ul class="exp-points">
+            <li>어지러움 원인을 고객이 이해할 수 있게 시각화</li>
+            <li>객관적 수치로 적응 가능 범위 제시</li>
+            <li>검안광학회·안경사포럼 기고 연구 기반</li>
+            <li>누진렌즈 처방 시 정확도 향상</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 누진다초점 -->
+      <div class="exp-panel" id="exp-progressive">
+        <div class="exp-img-wrap reveal">
+          <img src="https://www.genspark.ai/api/files/s/kiQtwoJw" alt="렌즈 컬러 샘플 체험" loading="lazy" />
+        </div>
+        <div class="reveal">
+          <div class="exp-content-tag">Progressive Lens Trial</div>
+          <h3 class="exp-content-title">직접 써보고<br>결정하는 누진 체험</h3>
+          <p class="exp-content-desc">
+            가격별 누진렌즈 샘플을 제작하여 직접 체험 후 결정할 수 있습니다.
+            가격과 품질의 차이를 내 감각으로 확인하세요.
+          </p>
+          <ul class="exp-points">
+            <li>가격별 누진렌즈 샘플 직접 체험</li>
+            <li>등급 차이에 대한 개인 민감도 확인</li>
+            <li>가격·제품 최적 조합 체험으로 결정</li>
+            <li>적응 실패 없는 선택 보장</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 피팅 및 가공 -->
+      <div class="exp-panel" id="exp-fitting">
+        <div class="exp-img-wrap reveal">
+          <img src="https://www.genspark.ai/api/files/s/oAWrY1l8" alt="피팅 및 조제 가공" loading="lazy" />
+        </div>
+        <div class="reveal">
+          <div class="exp-content-tag">Fitting & Processing</div>
+          <h3 class="exp-content-title">광학 성능까지<br>고려하는 피팅</h3>
+          <p class="exp-content-desc">
+            단순한 착용감만이 아닌 광학 성능까지 고려합니다.
+            에어밴딩 가공방식으로 렌즈 수명과 시야 품질 모두를 높입니다.
+          </p>
+          <ul class="exp-points">
+            <li>에어밴딩 가공 — 프레임과 렌즈 단면 완벽 일치</li>
+            <li>왜곡 최소화 및 파워링 반사 억제</li>
+            <li>피팅 메저로 수치화된 피팅 제공</li>
+            <li>외관·착용감·광학 성능 3가지 모두 충족</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     4. SOLUTION — 문제 해결
+══════════════════════════════════════ -->
+<section id="solution">
+  <div class="section-inner">
+    <div class="solution-intro reveal">
+      <span class="section-tag">Solution</span>
+      <h2 class="section-title">증상별 해결 방식</h2>
+      <div class="divider"></div>
+      <p class="section-desc">
+        불편함에는 반드시 원인이 있습니다.<br>
+        언커버안경원은 그 원인을 찾아 함께 해결합니다.
+      </p>
+    </div>
+    <div class="solution-grid reveal">
+      <div class="solution-card">
+        <div class="solution-icon">😵</div>
+        <div class="solution-label">Symptom 01</div>
+        <div class="solution-title">새 안경인데 어지럽다</div>
+        <div class="solution-desc">차이역 검안과 어지러움 객관적 측정법으로 원인을 분석하고, 적응 가능한 도수 범위를 설계합니다.</div>
+      </div>
+      <div class="solution-card">
+        <div class="solution-icon">👁️</div>
+        <div class="solution-label">Symptom 02</div>
+        <div class="solution-title">누진렌즈 적응 실패</div>
+        <div class="solution-desc">가격별 누진렌즈 샘플 체험으로 내 눈에 맞는 제품을 직접 확인 후 결정합니다. 실패 확률을 최소화합니다.</div>
+      </div>
+      <div class="solution-card">
+        <div class="solution-icon">🔍</div>
+        <div class="solution-label">Symptom 03</div>
+        <div class="solution-title">눈이 피로하고 불편하다</div>
+        <div class="solution-desc">양안시 검사를 통해 광학적 개입이 필요한 원인을 정확히 선별하고, 가장 안전한 교정 값을 제시합니다.</div>
+      </div>
+    </div>
+    <div class="solution-compare reveal">
+      <div class="compare-title">일반 안경원 vs 언커버안경원</div>
+      <div class="compare-grid">
+        <div class="compare-col before">
+          <div class="compare-col-title">일반 안경원</div>
+          <ul class="compare-items">
+            <li>안경사가 일방적으로 도수 결정</li>
+            <li>시력표 기반 단순 굴절 검사</li>
+            <li>안경테·렌즈 선택 후 가공</li>
+            <li>어지러움 원인 설명 부족</li>
+            <li>누진렌즈 체험 없이 가격만 제시</li>
+          </ul>
+        </div>
+        <div class="compare-col after">
+          <div class="compare-col-title">언커버안경원</div>
+          <ul class="compare-items">
+            <li>고객이 직접 참여하는 브리핑 검안</li>
+            <li>차이역(JND) 기반 정밀 검안</li>
+            <li>체험 후 직접 선택하는 렌즈 결정</li>
+            <li>어지러움 원인 객관적 수치 제시</li>
+            <li>가격별 누진렌즈 샘플 직접 체험</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     5. ACADEMY — 전문성
+══════════════════════════════════════ -->
+<section id="academy">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center;margin-bottom:8px">
+      <span class="section-tag">Academy</span>
+    </div>
+    <h2 class="section-title reveal" style="text-align:center">전문성</h2>
+    <p class="section-desc reveal" style="text-align:center;margin:12px auto 48px">
+      언커버안경원의 가장 중요한 키워드는 <strong>발전과 공감</strong>입니다.
+    </p>
+
+    <div class="academy-tabs reveal">
+      <button class="academy-tab active" data-panel="panel-forum">안경사 포럼</button>
+      <button class="academy-tab" data-panel="panel-uncover-academy">언커버 아카데미</button>
+      <button class="academy-tab" data-panel="panel-internal">언커버 내부 교육</button>
+    </div>
+
+    <div class="academy-panels">
+
+      <!-- 안경사 포럼 -->
+      <div class="academy-panel active" id="panel-forum">
+        <div class="academy-panel-grid">
+          <div class="academy-img-wrap reveal">
+            <img src="https://www.genspark.ai/api/files/s/CgXHJov3" alt="안경사 포럼 강연" loading="lazy" />
+          </div>
+          <div class="reveal">
+            <h3 class="academy-content-title">안경사 포럼</h3>
+            <p class="academy-content-desc">
+              "안경사 공부모임"에서 시작한 작은 소모임이 큰 규모의 포럼으로 성장했습니다.
+              매년 100명 이상이 참석하며, 안경사 업무와 가장 밀접하고
+              시대의 변화에 유연하게 적응하는 모임입니다.
+            </p>
+            <p class="academy-content-desc">
+              격식과 권위보다 실질적인 업무 능력 향상을 추구합니다.
+              AI 시대에도 사람과 사람 사이의 소통과 자극이 가장 중요하다고 믿습니다.
+            </p>
+            <div class="academy-sub-items">
+              <div class="academy-sub-item">
+                <div class="academy-sub-item-title">포럼 특징</div>
+                <div class="academy-sub-item-desc">학회보다 격식 없이, 안경사 업무에 가장 밀접한 내용으로 구성</div>
+              </div>
+              <div class="academy-sub-item">
+                <div class="academy-sub-item-title">참석 규모</div>
+                <div class="academy-sub-item-desc">매년 100명 이상의 안경사가 참석하는 대규모 전문가 모임</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 언커버 아카데미 -->
+      <div class="academy-panel" id="panel-uncover-academy">
+        <div class="academy-panel-grid">
+          <div class="academy-img-wrap reveal">
+            <img src="https://www.genspark.ai/api/files/s/NwuN2n06" alt="언커버 아카데미 교재" loading="lazy" />
+          </div>
+          <div class="reveal">
+            <h3 class="academy-content-title">언커버 아카데미</h3>
+            <p class="academy-content-desc">
+              단순히 이론을 나열하는 곳이 아닙니다.
+              고객의 시기능을 정확히 평가하고, 가장 편안한 상태로 이끌어내는
+              실질적인 '임상 기준'을 세우는 3개월의 과정입니다.
+            </p>
+            <div class="academy-sub-items">
+              <div class="academy-sub-item">
+                <div class="academy-sub-item-title">브리핑 검안</div>
+                <div class="academy-sub-item-desc">차이역(JND)을 통한 정밀한 교정 값 도출. 실시간 브리핑으로 고객의 신뢰를 구축합니다.</div>
+              </div>
+              <div class="academy-sub-item">
+                <div class="academy-sub-item-title">임상 양안시</div>
+                <div class="academy-sub-item-desc">방대한 이론 중 현장 핵심만 추려, 빠르고 정확하게 광학적 개입 대상을 선별합니다.</div>
+              </div>
+              <div class="academy-sub-item">
+                <div class="academy-sub-item-title">안경렌즈 전문가 과정</div>
+                <div class="academy-sub-item-desc">광학적 수차 관점의 렌즈 설계 이해. 물리적 변수를 직접 측정하는 실무 노하우 전수.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 언커버 내부 교육 -->
+      <div class="academy-panel" id="panel-internal">
+        <div class="internal-edu-grid">
+          <div class="internal-edu-img reveal">
+            <img src="https://www.genspark.ai/api/files/s/5SPyfhAm" alt="내부 교육 - 화이트보드 강의" loading="lazy" />
+          </div>
+          <div class="reveal">
+            <div class="internal-edu-keyword">발전과 공감</div>
+            <h3 class="academy-content-title">언커버 내부 교육</h3>
+            <p class="academy-content-desc">
+              모든 안경사가 동일한 최고 품질의 서비스를 제공하기 위해
+              주 1회 이상 내부 교육을 실시합니다.
+            </p>
+            <p class="academy-content-desc">
+              브리핑 검사방식을 계속 수정·발전시켜 현재 거의 완성 단계에 이르렀습니다.
+              안주하지 않고 계속 공부하고 연구하여 발전하겠다는 의지,
+              그리고 그 발전이 고객의 공감으로 이어지도록 합니다.
+            </p>
+            <div class="academy-sub-items">
+              <div class="academy-sub-item">
+                <div class="academy-sub-item-title">주 1회 이상 정기 교육</div>
+                <div class="academy-sub-item-desc">모든 안경사가 균일한 고품질 서비스를 제공하기 위한 체계적 내부 교육</div>
+              </div>
+              <div class="academy-sub-item">
+                <div class="academy-sub-item-title">지속적 연구 개발</div>
+                <div class="academy-sub-item-desc">브리핑 검안 방식을 포함한 모든 서비스를 지속적으로 연구·개선</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 추가 이미지 갤러리 -->
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px" class="reveal">
+          <div style="border-radius:12px;overflow:hidden;aspect-ratio:4/3">
+            <img src="https://www.genspark.ai/api/files/s/JKdlO8SP" alt="내부 교육 현장 1" loading="lazy" style="width:100%;height:100%;object-fit:cover" />
+          </div>
+          <div style="border-radius:12px;overflow:hidden;aspect-ratio:4/3">
+            <img src="https://www.genspark.ai/api/files/s/xn2m2A3K" alt="내부 교육 현장 2" loading="lazy" style="width:100%;height:100%;object-fit:cover" />
+          </div>
+          <div style="border-radius:12px;overflow:hidden;aspect-ratio:4/3">
+            <img src="https://www.genspark.ai/api/files/s/Lzu4Bg5Q" alt="내부 교육 현장 3" loading="lazy" style="width:100%;height:100%;object-fit:cover" />
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     6. CONTACT — 예약 및 방문 안내
+══════════════════════════════════════ -->
+<section id="contact">
+  <div class="contact-inner section-inner">
+    <div class="contact-top">
+      <div class="reveal">
+        <span class="section-tag">Contact</span>
+        <h2 class="section-title" style="color:white">예약 및 방문 안내</h2>
+        <div class="divider"></div>
+        <div class="contact-cta-note">
+          정밀한 감각 설계를 위해 <strong style="color:#b2ede7">예약제로 운영됩니다.</strong>
+        </div>
+        <p class="section-desc" style="color:#999;margin-bottom:32px">
+          네이버 예약 또는 카카오톡 채널로 편하게 문의해 주세요.
+        </p>
+        <div class="contact-btns">
+          <a href="https://booking.naver.com/booking/6/bizes/141576" target="_blank" class="contact-btn naver">
+            <span class="contact-btn-icon">📅</span> 네이버 예약
+          </a>
+          <a href="http://pf.kakao.com/_MRZhC" target="_blank" class="contact-btn kakao">
+            <span class="contact-btn-icon">💬</span> 카카오톡 상담
+          </a>
+        </div>
+      </div>
+      <div class="contact-info reveal">
+        <div class="contact-info-item">
+          <div class="contact-info-icon">📍</div>
+          <div>
+            <div class="contact-info-label">Address</div>
+            <div class="contact-info-val">서울시 중구 동호로 180</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">📞</div>
+          <div>
+            <div class="contact-info-label">Phone</div>
+            <div class="contact-info-val">010-7184-5569</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">⏰</div>
+          <div>
+            <div class="contact-info-label">Hours</div>
+            <div class="contact-info-val">
+              실시간 영업시간 및 휴무 안내는<br>
+              <a href="https://map.naver.com" target="_blank">네이버 플레이스</a>에서 확인하세요.
+            </div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">✉️</div>
+          <div>
+            <div class="contact-info-label">Email</div>
+            <div class="contact-info-val">uncover2018@naver.com</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-bottom reveal">
+      <div class="social-links">
+        <a href="https://blog.naver.com/uncover_ver2/" target="_blank" class="social-link">
+          <span>📝</span> 블로그
+        </a>
+        <a href="https://www.instagram.com/uncover_optical/" target="_blank" class="social-link">
+          <span>📷</span> 인스타그램
+        </a>
+        <a href="https://youtube.com/channel/UCwtkhxlApDpmXNgMjLkmv-g" target="_blank" class="social-link">
+          <span>▶️</span> 유튜브
+        </a>
+        <a href="https://map.naver.com" target="_blank" class="social-link">
+          <span>🗺️</span> 네이버 플레이스
+        </a>
+      </div>
+      <div class="naver-place-note">
+        📌 영업시간·임시 휴무·공지사항 등 변동 정보는
+        <a href="https://map.naver.com" target="_blank">네이버 플레이스</a>에서 실시간으로 확인하실 수 있습니다.
+        최신 소식은 <a href="https://www.instagram.com/uncover_optical/" target="_blank">인스타그램</a> 및
+        <a href="https://blog.naver.com/uncover_ver2/" target="_blank">블로그</a>를 통해 업데이트됩니다.
+      </div>
+      <div class="footer-copy">
+        © 2026 UNCOVER Optical Eyewear. All rights reserved. | 언커버안경원 | 사업자 633-18-00765
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // ── Notice Banner ──
+  document.getElementById('close-banner').addEventListener('click', function(){
+    document.getElementById('notice-banner').style.display='none';
+    document.getElementById('main-nav').style.top='0';
+  });
+
+  // ── Nav offset for banner ──
+  function updateNavTop(){
+    const banner = document.getElementById('notice-banner');
+    const nav = document.getElementById('main-nav');
+    if(banner && banner.style.display !== 'none'){
+      nav.style.top = banner.offsetHeight + 'px';
+    } else {
+      nav.style.top = '0';
+    }
+  }
+  updateNavTop();
+  window.addEventListener('resize', updateNavTop);
+
+  // ── Hamburger ──
+  document.getElementById('hamburger').addEventListener('click', function(){
+    document.getElementById('mobile-menu').classList.add('open');
+  });
+  document.getElementById('mobile-close').addEventListener('click', closeMobile);
+  function closeMobile(){ document.getElementById('mobile-menu').classList.remove('open'); }
+
+  // ── Experience Tabs ──
+  document.querySelectorAll('.exp-tab').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.exp-tab').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.exp-panel').forEach(p => p.classList.remove('active'));
+      this.classList.add('active');
+      document.getElementById(this.dataset.target).classList.add('active');
+    });
+  });
+
+  // ── Academy Tabs ──
+  document.querySelectorAll('.academy-tab').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.academy-tab').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.academy-panel').forEach(p => p.classList.remove('active'));
+      this.classList.add('active');
+      document.getElementById(this.dataset.panel).classList.add('active');
+    });
+  });
+
+  // ── Scroll Reveal ──
+  var reveals = document.querySelectorAll('.reveal');
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(function(el){ observer.observe(el); });
+
+  // ── Active nav link on scroll ──
+  var sections = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', function(){
+    var scrollY = window.scrollY;
+    sections.forEach(function(sec){
+      var top = sec.offsetTop - 100;
+      var bottom = top + sec.offsetHeight;
+      var id = sec.getAttribute('id');
+      var link = document.querySelector('.nav-links a[href="#'+id+'"]');
+      if(link){
+        if(scrollY >= top && scrollY < bottom){
+          document.querySelectorAll('.nav-links a').forEach(a => a.style.color='');
+          link.style.color='#2a9d8f';
+        }
+      }
+    });
+  });
+</script>
+</body>
+</html>
