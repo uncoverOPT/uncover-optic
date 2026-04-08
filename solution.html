@@ -3,208 +3,242 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SOLUTION | UNCOVER 안경원</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="언커버 안경원의 맞춤형 렌즈 솔루션. 직업, 연령, 증상에 따른 최적의 처방.">
+  <title>SOLUTION - 언커버 안경원</title>
+  
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/logo.png">
 </head>
 <body>
-
-<nav class="main-nav">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo"><span>UNCOVER</span> 안경원</a>
-    <div class="nav-menu">
-      <a href="index.html">HOME</a>
-      <a href="about.html">ABOUT</a>
-      <a href="experience.html">EXPERIENCE</a>
-      <a href="solution.html" class="active">SOLUTION</a>
-      <a href="academy.html">ACADEMY</a>
-      <a href="contact.html">CONTACT</a>
-      <a href="https://booking.naver.com/booking/6/bizes/141576" class="nav-cta" target="_blank">예약하기</a>
+  
+  <header class="header" id="header">
+    <div class="header__container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="UNCOVER Logo">
+        <span>UNCOVER</span>
+      </a>
+      
+      <nav class="nav" id="nav">
+        <ul class="nav__menu">
+          <li class="nav__item">
+            <a href="index.html" class="nav__link">HOME</a>
+          </li>
+          <li class="nav__item">
+            <a href="about.html" class="nav__link">ABOUT</a>
+          </li>
+          <li class="nav__item has-dropdown">
+            <a href="experience.html" class="nav__link has-dropdown">EXPERIENCE</a>
+            <ul class="dropdown">
+              <li><a href="experience-briefing.html" class="dropdown__link">사전 브리핑</a></li>
+              <li><a href="experience-dizziness.html" class="dropdown__link">어지럼증 상담</a></li>
+              <li><a href="experience-progressive.html" class="dropdown__link">누진렌즈 전문</a></li>
+              <li><a href="experience-fitting.html" class="dropdown__link">정밀 피팅</a></li>
+            </ul>
+          </li>
+          <li class="nav__item has-dropdown">
+            <a href="solution.html" class="nav__link has-dropdown active">SOLUTION</a>
+            <ul class="dropdown">
+              <li><a href="solution-occupation.html" class="dropdown__link">직업별 맞춤</a></li>
+              <li><a href="solution-age.html" class="dropdown__link">연령별 솔루션</a></li>
+              <li><a href="solution-symptom.html" class="dropdown__link">증상별 처방</a></li>
+              <li><a href="solution-lens.html" class="dropdown__link">특수렌즈</a></li>
+            </ul>
+          </li>
+          <li class="nav__item has-dropdown">
+            <a href="academy.html" class="nav__link has-dropdown ">ACADEMY</a>
+            <ul class="dropdown">
+              <li><a href="academy-forum.html" class="dropdown__link">검안포럼</a></li>
+              <li><a href="academy-education.html" class="dropdown__link">언커버 아카데미</a></li>
+              <li><a href="academy-internal.html" class="dropdown__link">내부 교육</a></li>
+            </ul>
+          </li>
+          <li class="nav__item">
+            <a href="contact.html" class="nav__link ">CONTACT</a>
+          </li>
+        </ul>
+        <a href="https://booking.naver.com/booking/6/bizes/141576" target="_blank" class="nav__cta">네이버 예약</a>
+      </nav>
+      
+      <button class="nav__toggle" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
-    <div class="nav-toggle"><span></span><span></span><span></span></div>
-  </div>
-</nav>
+  </header>
 
-<section class="hero-section" style="min-height: 60vh;">
-  <div class="hero-bg" style="background-image: url('images/glass_writing.jpg');"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <span class="hero-tag">Solutions</span>
-    <h1 class="hero-title">당신의 시력 문제,<br><span class="highlight">맞춤 솔루션</span></h1>
-    <p class="hero-subtitle">
-      단순 도수 교정이 아닌,<br>
-      생활과 직업에 맞춘 종합적인 시력 솔루션을 제공합니다.
-    </p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-tag">Comprehensive Solutions</span>
-      <h2 class="section-title">언커버의 맞춤형 솔루션</h2>
-      <p class="section-desc">
-        당신의 직업, 나이, 생활 패턴, 취미에 따라<br>
-        최적화된 렌즈와 코팅, 안경테를 제안합니다.
+  <section class="hero" style="min-height: 400px;">
+    <img src="images/glass_writing.jpg" alt="UNCOVER Solution" class="hero__background">
+    <div class="hero__content">
+      <h1 class="hero__title">
+        맞춤형 <span class="highlight">SOLUTION</span>
+      </h1>
+      <p class="hero__subtitle">
+        당신의 라이프스타일에 최적화된 렌즈 솔루션
       </p>
     </div>
+  </section>
 
-    <div class="grid-3">
-      <div class="feature-box">
-        <div class="feature-icon">💼</div>
-        <h3 class="feature-title">직업별 맞춤 솔루션</h3>
-        <p class="feature-desc">
-          사무직: 블루라이트 차단 + 중간거리 강화 누진렌즈<br>
-          운전직: 야간 눈부심 방지 코팅<br>
-          교사/강사: 화이트보드↔학생 시선 전환 최적화
+  <section class="section">
+    <div class="container">
+      <div class="section__header">
+        <p class="section__subtitle">Customized Solutions</p>
+        <h2 class="section__title">당신에게 딱 맞는 안경</h2>
+        <p class="section__description">
+          직업, 연령, 증상, 렌즈 종류에 따라<br>
+          최적화된 맞춤 솔루션을 제공합니다.
         </p>
       </div>
-      <div class="feature-box">
-        <div class="feature-icon">👴</div>
-        <h3 class="feature-title">연령별 맞춤 솔루션</h3>
-        <p class="feature-desc">
-          20~30대: 디지털 피로 완화 렌즈<br>
-          40~50대: 누진다초점 렌즈 체험 후 선택<br>
-          60대 이상: 밝기 최적화 + 큰 글씨 독서용
-        </p>
-      </div>
-      <div class="feature-box">
-        <div class="feature-icon">🎯</div>
-        <h3 class="feature-title">증상별 맞춤 솔루션</h3>
-        <p class="feature-desc">
-          어지러움: 프리즘 렌즈 + 양안 균형 조정<br>
-          눈 피로: 조절력 보조 렌즈<br>
-          야간 시력 저하: 고투과율 렌즈
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section dark">
-  <div class="container" style="max-width: 900px;">
-    <div class="section-header">
-      <span class="section-tag" style="color: var(--teal-light);">Lens Options</span>
-      <h2 class="section-title">렌즈 종류와 코팅</h2>
-    </div>
-    <div style="line-height: 2; font-size: 17px; color: rgba(255,255,255,0.85);">
-      <h3 style="font-family: var(--font-title); font-size: 24px; margin: 32px 0 16px; color: var(--teal-light);">
-        🔹 단초점 렌즈 (Single Vision)
-      </h3>
-      <p>근시, 원시, 난시 교정용. 가장 기본적인 렌즈로 원거리 또는 근거리 중 하나에 초점을 맞춥니다.</p>
       
-      <h3 style="font-family: var(--font-title); font-size: 24px; margin: 32px 0 16px; color: var(--teal-light);">
-        🔹 누진다초점 렌즈 (Progressive)
-      </h3>
-      <p>원거리 + 중간거리 + 근거리를 하나의 렌즈로. 40대 이상 또는 노안 시작 시 필수. 돋보기 없이 모든 거리 가능.</p>
+      <div class="grid grid--2" style="gap: 48px;">
+        <div class="card">
+          <img src="images/glass_writing.jpg" alt="직업별 맞춤" class="card__image">
+          <div class="card__content">
+            <h3 class="card__title">직업별 맞춤 솔루션</h3>
+            <p class="card__description">
+              디자이너, 프로그래머, 운전기사, 교사 등 직업에 따라 필요한 렌즈가 다릅니다. 
+              업무 환경과 시력 사용 패턴을 분석해 최적의 렌즈를 추천합니다.
+            </p>
+            <a href="solution-occupation.html" class="card__link">
+              자세히 보기 →
+            </a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <img src="images/store_visit.jpg" alt="연령별 솔루션" class="card__image">
+          <div class="card__content">
+            <h3 class="card__title">연령별 솔루션</h3>
+            <p class="card__description">
+              20대 청년, 40대 중년, 60대 시니어. 연령대에 따라 눈의 상태와 필요한 렌즈가 달라집니다. 
+              평생 눈 건강 관리를 함께합니다.
+            </p>
+            <a href="solution-age.html" class="card__link">
+              자세히 보기 →
+            </a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <img src="images/lens_sample.jpg" alt="증상별 처방" class="card__image">
+          <div class="card__content">
+            <h3 class="card__title">증상별 맞춤 처방</h3>
+            <p class="card__description">
+              어지럼증, 눈 피로, 두통, 건조함 등 증상에 따라 정확한 원인을 찾고 
+              맞춤 처방으로 불편함을 해결합니다.
+            </p>
+            <a href="solution-symptom.html" class="card__link">
+              자세히 보기 →
+            </a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <img src="images/staff_study.jpg" alt="특수렌즈" class="card__image">
+          <div class="card__content">
+            <h3 class="card__title">특수렌즈 전문</h3>
+            <p class="card__description">
+              누진다초점, 변색렌즈, 블루라이트 차단, 편광렌즈 등 
+              다양한 특수렌즈를 보유하고 최적의 조합을 제안합니다.
+            </p>
+            <a href="solution-lens.html" class="card__link">
+              자세히 보기 →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background-color: var(--bg-section);">
+    <div class="container" style="text-align: center;">
+      <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 16px;">
+        당신에게 맞는 솔루션이 궁금하신가요?
+      </h2>
+      <p style="font-size: 18px; color: var(--text-secondary); line-height: 1.8; max-width: 700px; margin: 0 auto 40px;">
+        언커버 전문가와 상담하시면<br>
+        직업, 연령, 증상에 최적화된 렌즈를 추천받으실 수 있습니다.
+      </p>
+      <a href="https://booking.naver.com/booking/6/bizes/141576" target="_blank" class="btn btn--primary">
+        맞춤 상담 예약
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__main">
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <img src="images/logo.png" alt="UNCOVER Logo">
+            <span>UNCOVER</span>
+          </div>
+          <p class="footer__description">
+            1999년부터 시작된 전문 안경원.<br>
+            정확한 검안과 맞춤 상담으로 당신의 시력을 책임집니다.
+          </p>
+        </div>
+        
+        <div class="footer__section">
+          <h3 class="footer__section-title">메뉴</h3>
+          <ul class="footer__links">
+            <li><a href="about.html" class="footer__link">ABOUT</a></li>
+            <li><a href="experience.html" class="footer__link">EXPERIENCE</a></li>
+            <li><a href="solution.html" class="footer__link">SOLUTION</a></li>
+            <li><a href="academy.html" class="footer__link">ACADEMY</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer__section">
+          <h3 class="footer__section-title">서비스</h3>
+          <ul class="footer__links">
+            <li><a href="https://booking.naver.com/booking/6/bizes/141576" target="_blank" class="footer__link">네이버 예약</a></li>
+            <li><a href="http://pf.kakao.com/_MRZhC" target="_blank" class="footer__link">카카오톡 상담</a></li>
+            <li><a href="contact.html" class="footer__link">오시는 길</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer__section">
+          <h3 class="footer__section-title">연락처</h3>
+          <ul class="footer__links">
+            <li class="footer__link">서울특별시 강남구</li>
+            <li class="footer__link">TEL: 02-XXXX-XXXX</li>
+            <li class="footer__link">영업시간: 10:00 - 20:00</li>
+          </ul>
+        </div>
+      </div>
       
-      <h3 style="font-family: var(--font-title); font-size: 24px; margin: 32px 0 16px; color: var(--teal-light);">
-        🔹 블루라이트 차단 렌즈
-      </h3>
-      <p>컴퓨터, 스마트폰 사용 시 발생하는 청색광을 차단하여 눈의 피로와 수면 방해를 줄입니다.</p>
-      
-      <h3 style="font-family: var(--font-title); font-size: 24px; margin: 32px 0 16px; color: var(--teal-light);">
-        🔹 변색 렌즈 (Photochromic)
-      </h3>
-      <p>실내에서는 투명, 실외에서는 자외선에 반응하여 선글라스처럼 변색되는 렌즈.</p>
-      
-      <h3 style="font-family: var(--font-title); font-size: 24px; margin: 32px 0 16px; color: var(--teal-light);">
-        🔹 프리즘 렌즈
-      </h3>
-      <p>사시(눈 정렬 이상)가 있는 분을 위해 빛의 방향을 조정하여 양안 시력을 맞춥니다.</p>
+      <div class="footer__bottom">
+        <p>&copy; 2026 UNCOVER Optical. All rights reserved.</p>
+      </div>
     </div>
-  </div>
-</section>
+  </footer>
 
-<section class="section light-gray">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-tag">Coating</span>
-      <h2 class="section-title">코팅 옵션</h2>
-    </div>
-    <div class="grid-2">
-      <div class="feature-box">
-        <h3 class="feature-title">반사방지 코팅 (AR Coating)</h3>
-        <p class="feature-desc">
-          렌즈 표면의 반사를 줄여 선명한 시야를 제공하고, 야간 운전 시 눈부심을 방지합니다.
-        </p>
-      </div>
-      <div class="feature-box">
-        <h3 class="feature-title">하드 코팅 (Scratch Resistant)</h3>
-        <p class="feature-desc">
-          렌즈 표면의 긁힘을 방지하여 렌즈를 오래 사용할 수 있도록 합니다.
-        </p>
-      </div>
-      <div class="feature-box">
-        <h3 class="feature-title">UV 차단 코팅</h3>
-        <p class="feature-desc">
-          자외선(UV)을 99% 이상 차단하여 눈의 노화와 백내장을 예방합니다.
-        </p>
-      </div>
-      <div class="feature-box">
-        <h3 class="feature-title">발수/발유 코팅</h3>
-        <p class="feature-desc">
-          물과 기름을 튕겨내 렌즈를 깨끗하게 유지하고 세척이 쉽습니다.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+  <script>
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
 
-<section class="cta-section">
-  <div class="container">
-    <h2 class="cta-title">당신에게 맞는 솔루션을 찾아드립니다</h2>
-    <p class="cta-desc">
-      25년 경력 전문가와 1:1 맞춤 상담 — 지금 바로 시작하세요.
-    </p>
-    <a href="https://booking.naver.com/booking/6/bizes/141576" class="cta-button" target="_blank">지금 예약하기</a>
-  </div>
-</section>
+    const navToggle = document.getElementById('navToggle');
+    const nav = document.getElementById('nav');
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
 
-<footer>
-  <div class="footer-content">
-    <div class="footer-brand">
-      <h3>UNCOVER 안경원</h3>
-      <p>가리지 않고 보여드립니다.<br>25년 경력의 전문 검안과 맞춤형 솔루션으로<br>당신의 시력과 삶의 질을 향상시킵니다.</p>
-      <div class="footer-social">
-        <a href="https://blog.naver.com/uncover_ver2/" target="_blank">📝</a>
-        <a href="https://www.instagram.com/uncover_optical/" target="_blank">📷</a>
-        <a href="https://youtube.com/channel/UCwtkhxlApDpmXNgMjLkmv-g" target="_blank">📹</a>
-        <a href="http://pf.kakao.com/_MRZhC" target="_blank">💬</a>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4>메뉴</h4>
-      <ul>
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="about.html">ABOUT</a></li>
-        <li><a href="experience.html">EXPERIENCE</a></li>
-        <li><a href="solution.html">SOLUTION</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>서비스</h4>
-      <ul>
-        <li><a href="academy.html">ACADEMY</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
-        <li><a href="https://booking.naver.com/booking/6/bizes/141576" target="_blank">예약하기</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>연락처</h4>
-      <ul>
-        <li>📞 010-7184-5569</li>
-        <li>✉️ uncover2018@naver.com</li>
-        <li>📍 서울시 중구 동호로 180</li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2025 UNCOVER 안경원. All rights reserved. | 사업자번호: 633-18-00765</p>
-  </div>
-</footer>
-
-<script src="main.js"></script>
+    if (window.innerWidth <= 768) {
+      document.querySelectorAll('.has-dropdown > .nav__link').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          link.parentElement.classList.toggle('active');
+        });
+      });
+    }
+  </script>
+  
 </body>
 </html>
