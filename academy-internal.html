@@ -14,37 +14,37 @@
 </head>
 <body>
     <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <a href="index.html"><img src="images/logo.png" alt="UNCOVER Logo"><span>UNCOVER</span></a>
-            </div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="about.html">ABOUT</a></li>
-                <li class="dropdown">
-                    <a href="experience.html">EXPERIENCE</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="experience-briefing.html">브리핑 검안</a></li>
-                        <li><a href="experience-dizziness.html">어지러움 해결</a></li>
-                        <li><a href="experience-progressive.html">누진 체험</a></li>
-                        <li><a href="experience-fitting.html">피팅 시스템</a></li>
-                    </ul>
-                </li>
-                <li><a href="solution.html">SOLUTION</a></li>
-                <li class="dropdown">
-                    <a href="academy.html" class="active">ACADEMY</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="academy-forum.html">안경사 포럼</a></li>
-                        <li><a href="academy-education.html">언커버 아카데미</a></li>
-                        <li><a href="academy-internal.html">내부 교육</a></li>
-                    </ul>
-                </li>
-                <li><a href="contact.html">CONTACT</a></li>
-                <li><a href="https://booking.naver.com/booking/6/bizes/141576" target="_blank" class="nav-cta">예약하기</a></li>
-            </ul>
-            <div class="mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></div>
+    <div class="nav-container">
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.png" alt="UNCOVER Logo"><span>UNCOVER</span></a>
         </div>
-    </nav>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li class="dropdown">
+                <a href="experience.html">EXPERIENCE</a>
+                <ul class="dropdown-menu">
+                    <li><a href="experience-briefing.html">브리핑 검안</a></li>
+                    <li><a href="experience-dizziness.html">어지러움 해결</a></li>
+                    <li><a href="experience-progressive.html">누진 체험</a></li>
+                    <li><a href="experience-fitting.html">피팅 시스템</a></li>
+                </ul>
+            </li>
+            <li><a href="solution.html">SOLUTION</a></li>
+            <li class="dropdown">
+                <a href="academy.html" class="active">ACADEMY</a>
+                <ul class="dropdown-menu">
+                    <li><a href="academy-forum.html">안경사 포럼</a></li>
+                    <li><a href="academy-education.html">언커버 아카데미</a></li>
+                    <li><a href="academy-internal.html">내부 교육</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="https://booking.naver.com/booking/6/bizes/141576" target="_blank" class="nav-cta">예약하기</a></li>
+        </ul>
+        <div class="mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></div>
+    </div>
+</nav>
 
     <section class="page-hero">
         <div class="container">
@@ -124,7 +124,7 @@
         </div>
     </section>
 
-    <footer class="footer">
+        <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
@@ -159,21 +159,7 @@
                 <p>&copy; 2026 UNCOVER OPTICAL. All rights reserved.</p>
             </div>
         </div>
-    </footer>
-
-    <script>
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) { navbar.classList.add('scrolled'); } else { navbar.classList.remove('scrolled'); }
-        });
-        const mobileToggle = document.getElementById('mobileToggle');
-        const navMenu = document.getElementById('navMenu');
-        mobileToggle.addEventListener('click', () => { navMenu.classList.toggle('active'); });
-        const navLinks = document.querySelectorAll('.nav-menu a');
-        navLinks.forEach(link => { link.addEventListener('click', () => { navMenu.classList.remove('active'); }); });
-    </script>
-
-    <!-- Channel Sidebar -->
+    </footer>    <!-- Channel Sidebar -->
     <div class="channel-sidebar" id="channelSidebar">
         <div class="sidebar-toggle" onclick="toggleSidebar()">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -182,69 +168,61 @@
         </div>
         <div class="sidebar-content">
             <div class="channel-links">
-                <!-- Naver Reservation -->
-                <a href="https://booking.naver.com/booking/6/bizes/141576" target="_blank" class="channel-link" title="네이버 예약">
-                    <svg viewBox="0 0 24 24" fill="#03C75A"><path d="M16.273 12.845L7.376 0H0v24h7.726V11.156L16.624 24H24V0h-7.727v12.845z"/></svg>
+                <a href="https://booking.naver.com/booking/6/bizes/141576" target="_blank" class="channel-link">
+                    <svg viewBox="0 0 24 24" fill="#03C75A"><path d="M16.273 12.845L7.376 0H0v24h7.726V11.156L16.624 24H24V0h-7.727z"/></svg>
                     <span class="channel-tooltip">네이버 예약</span>
                 </a>
-                
-                <!-- Naver Place -->
-                <a href="https://naver.me/xtgBNR8W" target="_blank" class="channel-link" title="네이버 플레이스">
+                <a href="https://naver.me/xtgBNR8W" target="_blank" class="channel-link">
                     <svg viewBox="0 0 24 24" fill="#03C75A"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                     <span class="channel-tooltip">네이버 플레이스</span>
                 </a>
-                
-                <!-- KakaoTalk -->
-                <a href="http://pf.kakao.com/_MRZhC" target="_blank" class="channel-link" title="카카오톡 문의">
+                <a href="http://pf.kakao.com/_MRZhC" target="_blank" class="channel-link">
                     <svg viewBox="0 0 24 24" fill="#FEE500"><path d="M12 3c5.799 0 10.5 3.664 10.5 8.185 0 4.52-4.701 8.184-10.5 8.184a13.5 13.5 0 01-1.727-.11l-4.408 2.883c-.501.265-.678.236-.472-.413l.892-3.678c-2.88-1.46-4.785-3.99-4.785-6.866C1.5 6.665 6.201 3 12 3z"/></svg>
                     <span class="channel-tooltip">카카오톡 문의</span>
                 </a>
-                
-                <!-- Instagram -->
-                <a href="https://www.instagram.com/uncover_optical/" target="_blank" class="channel-link" title="인스타그램">
-                    <svg viewBox="0 0 24 24" fill="url(#instagram-gradient)">
-                        <defs>
-                            <linearGradient id="instagram-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
-                                <stop offset="0%" style="stop-color:#FED373;stop-opacity:1" />
-                                <stop offset="25%" style="stop-color:#F15245;stop-opacity:1" />
-                                <stop offset="50%" style="stop-color:#D92E7F;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#9B36B7;stop-opacity:1" />
-                            </linearGradient>
-                        </defs>
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-                    </svg>
+                <a href="https://www.instagram.com/uncover_optical/" target="_blank" class="channel-link">
+                    <svg viewBox="0 0 24 24"><defs><linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#FED373"/><stop offset="35%" stop-color="#F15245"/><stop offset="65%" stop-color="#D92E7F"/><stop offset="100%" stop-color="#9B36B7"/></linearGradient></defs><path fill="url(#ig)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
                     <span class="channel-tooltip">인스타그램</span>
                 </a>
-                
-                <!-- YouTube -->
-                <a href="https://youtube.com/channel/UCwtkhxlApDpmXNgMjLkmv-g" target="_blank" class="channel-link" title="유튜브">
-                    <svg viewBox="0 0 24 24" fill="#FF0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                <a href="https://youtube.com/channel/UCwtkhxlApDpmXNgMjLkmv-g" target="_blank" class="channel-link">
+                    <svg viewBox="0 0 24 24" fill="#FF0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12z"/></svg>
                     <span class="channel-tooltip">유튜브</span>
                 </a>
-                
-                <!-- Blog -->
-                <a href="https://blog.naver.com/uncover_ver2/" target="_blank" class="channel-link" title="네이버 블로그">
-                    <svg viewBox="0 0 24 24" fill="#03C75A"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm3.5 13.5h-3v-3h-2v3h-3v-2h3v-3h2v3h3v2z"/></svg>
+                <a href="https://blog.naver.com/uncover_ver2/" target="_blank" class="channel-link">
+                    <svg viewBox="0 0 24 24" fill="#03C75A"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm1 13H9v-2h4v-2H9v-2h4V9l4 3-4 3z"/></svg>
                     <span class="channel-tooltip">블로그</span>
                 </a>
             </div>
         </div>
     </div>
-
     <script>
+    // Navbar scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 40);
+    });
+    // Mobile toggle
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navMenu = document.getElementById('navMenu');
+    mobileToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        mobileToggle.classList.toggle('active');
+    });
+    // Close menu when clicking nav link
+    navMenu.querySelectorAll('a:not(.nav-cta)').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            mobileToggle.classList.remove('active');
+        });
+    });
+    // Channel sidebar
     function toggleSidebar() {
-        const sidebar = document.getElementById('channelSidebar');
-        sidebar.classList.toggle('open');
+        document.getElementById('channelSidebar').classList.toggle('open');
     }
-    
-    // Close sidebar when clicking outside
-    document.addEventListener('click', function(event) {
-        const sidebar = document.getElementById('channelSidebar');
-        if (sidebar && !sidebar.contains(event.target)) {
-            sidebar.classList.remove('open');
-        }
+    document.addEventListener('click', e => {
+        const sb = document.getElementById('channelSidebar');
+        if (sb && !sb.contains(e.target)) sb.classList.remove('open');
     });
     </script>
-
 </body>
 </html>
