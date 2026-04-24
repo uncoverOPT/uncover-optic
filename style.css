@@ -770,6 +770,30 @@ p  { margin-bottom: 1rem; color: var(--text-secondary); }
 }
 
 /* =========================================
+   브리핑 검안 — 프로세스 사진
+   ========================================= */
+.briefing-process-photo {
+    margin-top: 2.5rem;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    aspect-ratio: 16/7;
+}
+.briefing-process-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+    display: block;
+    transition: transform 0.4s ease;
+}
+.briefing-process-photo:hover img { transform: scale(1.03); }
+
+@media (max-width: 640px) {
+    .briefing-process-photo { aspect-ratio: 4/3; }
+}
+
+/* =========================================
    솔루션 — 맞춤 설계 사진
    ========================================= */
 .solution-custom-photo {
