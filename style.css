@@ -770,6 +770,39 @@ p  { margin-bottom: 1rem; color: var(--text-secondary); }
 }
 
 /* =========================================
+   피팅 — 렌즈 사진 2장 나란히
+   ========================================= */
+.fitting-lens-photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
+}
+.fitting-lens-photo {
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    box-shadow: var(--shadow-sm);
+}
+.fitting-lens-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+.fitting-lens-photo:hover img { transform: scale(1.04); }
+
+@media (max-width: 768px) {
+    .fitting-lens-photos { grid-template-columns: 1fr 1fr; gap: 8px; }
+}
+@media (max-width: 480px) {
+    .fitting-lens-photos { grid-template-columns: 1fr; }
+    .fitting-lens-photo { aspect-ratio: 4/3; }
+}
+
+/* =========================================
    누진 체험 — 사진 3열 그리드
    ========================================= */
 .progressive-photo-grid {
