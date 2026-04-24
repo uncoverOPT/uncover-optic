@@ -707,10 +707,13 @@ p  { margin-bottom: 1rem; color: var(--text-secondary); }
     .section { padding: 50px 0; }
     .container { padding: 0 16px; }
 
-    /* Hero */
+    /* Hero — mobile image */
     .hero {
         min-height: 80vh;
         padding-top: 70px;
+        background:
+            linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.42)),
+            url('images/hero_mobile.jpg') center / cover no-repeat;
         background-attachment: scroll; /* fix parallax on iOS */
     }
     .hero-content { padding: 0 16px; }
