@@ -770,6 +770,30 @@ p  { margin-bottom: 1rem; color: var(--text-secondary); }
 }
 
 /* =========================================
+   CONTACT — 매장 외관 사진
+   ========================================= */
+.contact-store-photo {
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    aspect-ratio: 16/7;
+    margin-bottom: 0;
+}
+.contact-store-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+    display: block;
+    transition: transform 0.4s ease;
+}
+.contact-store-photo:hover img { transform: scale(1.03); }
+
+@media (max-width: 640px) {
+    .contact-store-photo { aspect-ratio: 4/3; }
+}
+
+/* =========================================
    브리핑 검안 — 프로세스 사진
    ========================================= */
 .briefing-process-photo {
