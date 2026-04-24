@@ -770,6 +770,30 @@ p  { margin-bottom: 1rem; color: var(--text-secondary); }
 }
 
 /* =========================================
+   내부 교육 — 현장 사진
+   ========================================= */
+.internal-edu-photo {
+    margin-top: 2.5rem;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    aspect-ratio: 16/7;
+}
+.internal-edu-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    display: block;
+    transition: transform 0.4s ease;
+}
+.internal-edu-photo:hover img { transform: scale(1.03); }
+
+@media (max-width: 640px) {
+    .internal-edu-photo { aspect-ratio: 4/3; }
+}
+
+/* =========================================
    안경사 포럼 — 슬라이더
    ========================================= */
 .forum-slider {
