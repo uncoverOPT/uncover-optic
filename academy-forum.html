@@ -11,66 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* 포럼 갤러리 레이아웃 */
-        .forum-gallery {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: auto auto;
-            gap: 12px;
-            margin-top: 3rem;
-        }
-        .forum-gallery .gallery-main {
-            grid-column: 1 / 3;
-            border-radius: 12px;
-            overflow: hidden;
-            aspect-ratio: 16/7;
-        }
-        .forum-gallery .gallery-main img {
-            width: 100%; height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-        .forum-gallery .gallery-sub {
-            border-radius: 12px;
-            overflow: hidden;
-            aspect-ratio: 4/3;
-        }
-        .forum-gallery .gallery-sub img {
-            width: 100%; height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.3s ease;
-        }
-        .forum-gallery .gallery-sub:hover img { transform: scale(1.04); }
-
-        /* 3열 하단 사진 행 */
-        .forum-gallery-bottom {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            margin-top: 12px;
-        }
-        .forum-gallery-bottom .gallery-sub {
-            border-radius: 12px;
-            overflow: hidden;
-            aspect-ratio: 4/3;
-        }
-        .forum-gallery-bottom .gallery-sub img {
-            width: 100%; height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.3s ease;
-        }
-        .forum-gallery-bottom .gallery-sub:hover img { transform: scale(1.04); }
-
-        @media (max-width: 640px) {
-            .forum-gallery { grid-template-columns: 1fr; gap: 8px; }
-            .forum-gallery .gallery-main { grid-column: 1; aspect-ratio: 16/9; }
-            .forum-gallery .gallery-sub { aspect-ratio: 16/9; }
-            .forum-gallery-bottom { grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
-        }
-    </style>
 </head>
 <body>
     <nav class="navbar" id="navbar">
@@ -122,41 +62,30 @@
                     <p>저희에게도 "안경사 공부모임"은 안경사로서 역량을 키우는 데 가장 큰 자극제가 되었습니다. 댓글을 쓰고 지우며 고민하고, 때로는 댓글 논쟁에서 이기고 싶어 책을 찾아보기도 하며 자연스럽게 안경사 업무에 더 깊이 빠지게 되었습니다.</p>
                     <p><strong>지금의 추효성 안경사를 만든 데 정말 큰 영향을 준 소중한 공간입니다.</strong></p>
                 </div>
-                <div class="content-text">
-                    <h2>AI 시대에도<br>필요한 이유</h2>
-                    <p>지금은 시대가 바뀌어 다음 카페를 이용하는 분들이 거의 없습니다. 카톡방이나 AI를 통해 궁금증을 해결하는 시대가 되었기에, 온라인 커뮤니티나 오프라인 모임이 예전만큼의 자극을 주지 못한다는 것도 일정 부분 공감을 하고 있습니다.</p>
-                    <p>하지만 저는 조금 다르게 생각합니다. <strong>아무리 AI 시대라 할지라도 결국 안경사 업무는 사람과 사람이 만나는 일입니다.</strong></p>
-                    <p>AI가 줄 수 없는 사람 간의 소통과 자극이 여전히 중요하다는 점에서, 오히려 지금과 같은 시대에 더 필요한 모임이라고 생각합니다.</p>
-                </div>
-            </div>
-
-            <!-- 포럼 사진 갤러리 -->
-            <div class="forum-gallery">
-                <!-- 첫 번째: 대형 전체 강의 사진 (가장 임팩트) -->
-                <div class="gallery-main">
-                    <img src="images/forum_new5.jpg" alt="안경사 포럼 전체 강의 현장">
-                </div>
-                <!-- 두 번째 행: 2장 -->
-                <div class="gallery-sub">
-                    <img src="images/forum_new2.jpg" alt="안경사 포럼 발표">
-                </div>
-                <div class="gallery-sub">
-                    <img src="images/forum_new3.jpg" alt="안경사 포럼 강연">
-                </div>
-            </div>
-            <!-- 세 번째 행: 2장 -->
-            <div class="forum-gallery-bottom">
-                <div class="gallery-sub">
-                    <img src="images/forum_new1.jpg" alt="안경사 포럼 토론">
-                </div>
-                <div class="gallery-sub">
-                    <img src="images/forum_new4.jpg" alt="안경사 포럼 실습">
+                <div class="content-image">
+                    <img src="images/forum_lecture1.jpg" alt="안경사 포럼">
                 </div>
             </div>
         </div>
     </section>
 
     <section class="section content-section">
+        <div class="container">
+            <div class="content-block reverse">
+                <div class="content-text">
+                    <h2>AI 시대에도<br>필요한 이유</h2>
+                    <p>지금은 시대가 바뀌어 다음 카페를 이용하는 분들이 거의 없습니다. 카톡방이나 AI를 통해 궁금증을 해결하는 시대가 되었기에, 온라인 커뮤니티나 오프라인 모임이 예전만큼의 자극을 주지 못한다는 것도 일정 부분 공감을 하고 있습니다.</p>
+                    <p>하지만 저는 조금 다르게 생각합니다. <strong>아무리 AI 시대라 할지라도 결국 안경사 업무는 사람과 사람이 만나는 일입니다.</strong> 안경사로서 더 큰 역량을 발휘하려면 반드시 '사람에게서 오는 자극'이 필요하다고 생각합니다.</p>
+                    <p>AI가 줄 수 없는 사람 간의 소통과 자극이 여전히 중요하다는 점에서, 오히려 지금과 같은 시대에 더 필요한 모임이라고 생각합니다.</p>
+                </div>
+                <div class="content-image">
+                    <img src="images/forum_lecture2.jpg" alt="포럼 토론">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-white">
         <div class="container">
             <div class="section-title">
                 <h2>안경사 포럼의 특징</h2>
@@ -165,25 +94,19 @@
 
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-                    </div>
+                    <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></div>
                     <h3>격식 없는 소통</h3>
                     <p>그 어떤 학회보다 격식과 권위를 중요시하지 않습니다. 현장 중심의 자유로운 토론과 질문이 이루어집니다.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
-                    </div>
+                    <div class="feature-icon">💼</div>
                     <h3>실무 밀착형</h3>
                     <p>그 어떤 곳보다 우리 안경사 업무와 밀접하고, 시대의 변화에 유연하게 적응하며, 업무 능력을 실질적으로 향상시킵니다.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    </div>
+                    <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline></svg></div>
                     <h3>매년 100명 이상 참석</h3>
                     <p>바쁜 와중에도 귀한 글과 발표를 해주시는 기고자 선생님들과 참석해 주시는 선생님들이 포럼의 원동력입니다.</p>
                 </div>
@@ -191,7 +114,7 @@
         </div>
     </section>
 
-    <section class="section bg-white">
+    <section class="section content-section">
         <div class="container">
             <div class="content-block">
                 <div class="content-text">
@@ -199,6 +122,9 @@
                     <p>안경사 포럼에서 다룬 주제들은 검안광학회에도 기고되고 있습니다.</p>
                     <p>특히 <strong>어지러움을 측정하는 객관적 방법론</strong>은 포럼에서 발표되고 검안광학회에 기고되어, 업계 전체에 새로운 기준을 제시하고 있습니다.</p>
                     <p>이론에만 머무르지 않고, 현장에서 바로 적용할 수 있는 실질적인 내용을 다룹니다.</p>
+                </div>
+                <div class="content-image">
+                    <img src="images/forum_presentation.jpg" alt="포럼 발표">
                 </div>
             </div>
         </div>
@@ -247,8 +173,7 @@
                 <p>&copy; 2026 UNCOVER OPTICAL. All rights reserved.</p>
             </div>
         </div>
-    </footer>
-    <!-- Channel Sidebar -->
+    </footer>    <!-- Channel Sidebar -->
     <div class="channel-sidebar" id="channelSidebar">
         <div class="sidebar-toggle" onclick="toggleSidebar()">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
