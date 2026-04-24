@@ -100,16 +100,34 @@
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">💼</div>
+                    <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div>
                     <h3>실무 밀착형</h3>
                     <p>그 어떤 곳보다 우리 안경사 업무와 밀접하고, 시대의 변화에 유연하게 적응하며, 업무 능력을 실질적으로 향상시킵니다.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline></svg></div>
+                    <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
                     <h3>매년 100명 이상 참석</h3>
                     <p>바쁜 와중에도 귀한 글과 발표를 해주시는 기고자 선생님들과 참석해 주시는 선생님들이 포럼의 원동력입니다.</p>
                 </div>
+            </div>
+
+            <!-- 포럼 현장 슬라이드 -->
+            <div class="forum-slider" id="forumSlider">
+                <div class="forum-slider-track" id="forumTrack">
+                    <div class="forum-slide"><img src="images/forum_new1.jpg" alt="안경사 포럼 토론 현장"></div>
+                    <div class="forum-slide"><img src="images/forum_new2.jpg" alt="안경사 포럼 발표 현장"></div>
+                    <div class="forum-slide"><img src="images/forum_new3.jpg" alt="안경사 포럼 강연 현장"></div>
+                    <div class="forum-slide"><img src="images/forum_new4.jpg" alt="안경사 포럼 실습 강연"></div>
+                    <div class="forum-slide"><img src="images/forum_slide5.jpg" alt="안경사 포럼 전체 강의 현장"></div>
+                </div>
+                <button class="forum-prev" onclick="forumMove(-1)" aria-label="이전">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <button class="forum-next" onclick="forumMove(1)" aria-label="다음">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+                <div class="forum-dots" id="forumDots"></div>
             </div>
         </div>
     </section>
@@ -237,6 +255,49 @@
         const sb = document.getElementById('channelSidebar');
         if (sb && !sb.contains(e.target)) sb.classList.remove('open');
     });
+
+    // 포럼 슬라이더
+    (function() {
+        const track   = document.getElementById('forumTrack');
+        const dotsWrap = document.getElementById('forumDots');
+        if (!track) return;
+        const slides  = track.querySelectorAll('.forum-slide');
+        const total   = slides.length;
+        let cur = 0, autoTimer;
+
+        // 닷 생성
+        slides.forEach((_, i) => {
+            const d = document.createElement('button');
+            d.className = 'forum-dot' + (i === 0 ? ' active' : '');
+            d.setAttribute('aria-label', `슬라이드 ${i+1}`);
+            d.addEventListener('click', () => goTo(i));
+            dotsWrap.appendChild(d);
+        });
+
+        function goTo(idx) {
+            cur = (idx + total) % total;
+            track.style.transform = `translateX(-${cur * 100}%)`;
+            dotsWrap.querySelectorAll('.forum-dot').forEach((d, i) =>
+                d.classList.toggle('active', i === cur));
+        }
+        function startAuto() {
+            clearInterval(autoTimer);
+            autoTimer = setInterval(() => goTo(cur + 1), 4000);
+        }
+
+        window.forumMove = function(dir) { goTo(cur + dir); startAuto(); };
+
+        // 터치 스와이프
+        let touchX = 0;
+        const slider = document.getElementById('forumSlider');
+        slider.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, {passive:true});
+        slider.addEventListener('touchend', e => {
+            const diff = touchX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 40) { goTo(cur + (diff > 0 ? 1 : -1)); startAuto(); }
+        }, {passive:true});
+
+        startAuto();
+    })();
     </script>
 </body>
 </html>

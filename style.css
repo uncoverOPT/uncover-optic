@@ -770,6 +770,86 @@ p  { margin-bottom: 1rem; color: var(--text-secondary); }
 }
 
 /* =========================================
+   안경사 포럼 — 슬라이더
+   ========================================= */
+.forum-slider {
+    position: relative;
+    margin-top: 3rem;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    background: #000;
+    user-select: none;
+}
+.forum-slider-track {
+    display: flex;
+    transition: transform 0.45s cubic-bezier(.4,0,.2,1);
+    will-change: transform;
+}
+.forum-slide {
+    flex: 0 0 100%;
+    aspect-ratio: 16/7;
+    overflow: hidden;
+}
+.forum-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+/* 화살표 버튼 */
+.forum-prev,
+.forum-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.45);
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #fff;
+    transition: background 0.2s;
+    z-index: 10;
+}
+.forum-prev { left: 14px; }
+.forum-next { right: 14px; }
+.forum-prev:hover,
+.forum-next:hover { background: rgba(0,0,0,0.72); }
+/* 닷 인디케이터 */
+.forum-dots {
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 7px;
+    z-index: 10;
+}
+.forum-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s, transform 0.2s;
+}
+.forum-dot.active {
+    background: #fff;
+    transform: scale(1.25);
+}
+@media (max-width: 640px) {
+    .forum-slide { aspect-ratio: 4/3; }
+    .forum-prev, .forum-next { width: 36px; height: 36px; }
+}
+
+/* =========================================
    피팅 — 렌즈 사진 2장 나란히
    ========================================= */
 .fitting-lens-photos {
