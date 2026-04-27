@@ -978,63 +978,52 @@ p  { margin-bottom: 1rem; color: var(--text-secondary); }
 }
 
 /* =========================================
-   피팅 — 왜곡검사기 섹션
+   EXPERIENCE — 왜곡검사기 사진 2열
    ========================================= */
-.distortion-photos {
+.distortion-photos-exp {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    margin-bottom: 2rem;
+    gap: 16px;
+    flex: 1;
+    min-width: 0;
 }
-.distortion-photo {
-    border-radius: 16px;
+.distortion-photo-exp {
+    border-radius: 14px;
     overflow: hidden;
     box-shadow: var(--shadow-md);
-    background: #000;
-    position: relative;
+    background: #111;
 }
-.distortion-photo img {
+.distortion-photo-exp img {
     width: 100%;
     aspect-ratio: 4/3;
     object-fit: cover;
     display: block;
     transition: transform 0.4s ease;
 }
-.distortion-photo:hover img { transform: scale(1.03); }
-.distortion-caption {
-    padding: 1rem 1.25rem 1.1rem;
+.distortion-photo-exp:hover img { transform: scale(1.04); }
+.distortion-caption-exp {
+    padding: 0.85rem 1rem 0.9rem;
     background: #fff;
 }
-.distortion-badge {
+.distortion-badge-exp {
     display: inline-block;
-    font-size: 0.78rem;
+    font-size: 0.75rem;
     font-weight: 700;
-    padding: 0.25rem 0.75rem;
+    padding: 0.22rem 0.7rem;
     border-radius: 20px;
-    margin-bottom: 0.5rem;
-    letter-spacing: 0.5px;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.4px;
 }
-.distortion-badge.good  { background: #e6f5f3; color: var(--primary-teal); }
-.distortion-badge.check { background: #fff3e0; color: #e67e22; }
-.distortion-caption p {
-    font-size: 0.9rem;
+.distortion-badge-exp.good  { background: #e6f5f3; color: var(--primary-teal); }
+.distortion-badge-exp.check { background: #fff3e0; color: #e67e22; }
+.distortion-caption-exp p {
+    font-size: 0.85rem;
     color: var(--text-secondary);
     margin: 0;
     line-height: 1.5;
 }
-.distortion-desc {
-    text-align: center;
-    font-size: 1rem;
-    color: var(--text-secondary);
-    max-width: 680px;
-    margin: 0 auto;
-    line-height: 1.8;
-    padding: 1.25rem 1.5rem;
-    background: var(--bg-oak);
-    border-radius: 12px;
-}
 @media (max-width: 640px) {
-    .distortion-photos { grid-template-columns: 1fr; gap: 16px; }
+    .distortion-photos-exp { grid-template-columns: 1fr; gap: 12px; }
 }
 
 /* =========================================
