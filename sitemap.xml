@@ -4,53 +4,53 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://uncoveroptic.co.kr/index.html</loc>
+    <loc>https://uncoveroptic.kr/index.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <image:image><image:loc>https://uncoveroptic.co.kr/images/carousel_01.jpg</image:loc><image:title>UNCOVER 언커버 안경원 메인</image:title><image:caption>가리지 않고 보여드립니다 - UNCOVER 언커버 안경원</image:caption></image:image>
-    <image:image><image:loc>https://uncoveroptic.co.kr/images/carousel_02.jpg</image:loc><image:title>브리핑 검안 시스템</image:title><image:caption>도수가 아닌 적응을 설계하는 브리핑 검안</image:caption></image:image>
-    <image:image><image:loc>https://uncoveroptic.co.kr/images/carousel_03.jpg</image:loc><image:title>누진렌즈 직접 체험</image:title><image:caption>가격별 누진렌즈 샘플을 직접 써보고 결정</image:caption></image:image>
-    <image:image><image:loc>https://uncoveroptic.co.kr/images/carousel_04.jpg</image:loc><image:title>언커버 안경원 위치</image:title><image:caption>서울 중구 동호로 180</image:caption></image:image>
-    <image:image><image:loc>https://uncoveroptic.co.kr/images/carousel_05.jpg</image:loc><image:title>안경사 전문 교육</image:title><image:caption>전문가가 배우러 오는 안경원</image:caption></image:image>
+    <image:image><image:loc>https://uncoveroptic.kr/images/carousel_01.jpg</image:loc><image:title>UNCOVER 언커버 안경원 메인</image:title><image:caption>가리지 않고 보여드립니다 - UNCOVER 언커버 안경원</image:caption></image:image>
+    <image:image><image:loc>https://uncoveroptic.kr/images/carousel_02.jpg</image:loc><image:title>브리핑 검안 시스템</image:title><image:caption>도수가 아닌 적응을 설계하는 브리핑 검안</image:caption></image:image>
+    <image:image><image:loc>https://uncoveroptic.kr/images/carousel_03.jpg</image:loc><image:title>누진렌즈 직접 체험</image:title><image:caption>가격별 누진렌즈 샘플을 직접 써보고 결정</image:caption></image:image>
+    <image:image><image:loc>https://uncoveroptic.kr/images/carousel_04.jpg</image:loc><image:title>언커버 안경원 위치</image:title><image:caption>서울 중구 동호로 180</image:caption></image:image>
+    <image:image><image:loc>https://uncoveroptic.kr/images/carousel_05.jpg</image:loc><image:title>안경사 전문 교육</image:title><image:caption>전문가가 배우러 오는 안경원</image:caption></image:image>
   </url>
 
-  <url><loc>https://uncoveroptic.co.kr/about.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-  <url>
-    <loc>https://uncoveroptic.co.kr/experience.html</loc>
-    <lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
-  </url>
-  <url><loc>https://uncoveroptic.co.kr/experience-briefing.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
-    <image:image><image:loc>https://uncoveroptic.co.kr/images/briefing_process.jpg</image:loc><image:title>브리핑 검안 프로세스</image:title></image:image>
-  </url>
-  <url><loc>https://uncoveroptic.co.kr/experience-dizziness.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
-    <image:image><image:loc>https://uncoveroptic.co.kr/images/dizziness_store.jpg</image:loc><image:title>어지러움 해결 안경원</image:title></image:image>
-  </url>
-  <url><loc>https://uncoveroptic.co.kr/experience-progressive.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
-    <image:image><image:loc>https://uncoveroptic.co.kr/images/progressive_lens1.jpg</image:loc><image:title>누진렌즈 직접 체험</image:title></image:image>
-  </url>
-  <url><loc>https://uncoveroptic.co.kr/experience-fitting.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
-    <image:image><image:loc>https://uncoveroptic.co.kr/images/fitting_lens1.jpg</image:loc><image:title>안경 피팅 시스템</image:title></image:image>
-  </url>
-
-  <url><loc>https://uncoveroptic.co.kr/solution.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
-    <image:image><image:loc>https://uncoveroptic.co.kr/images/solution_custom.jpg</image:loc><image:title>맞춤 안경 솔루션</image:title></image:image>
-  </url>
-
-  <url><loc>https://uncoveroptic.co.kr/academy.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://uncoveroptic.co.kr/academy-forum.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-    <image:image><image:loc>https://uncoveroptic.co.kr/images/forum_new1.jpg</image:loc><image:title>안경사 포럼</image:title></image:image>
-  </url>
-  <url><loc>https://uncoveroptic.co.kr/academy-education.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://uncoveroptic.co.kr/academy-internal.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-    <image:image><image:loc>https://uncoveroptic.co.kr/images/internal_education.jpg</image:loc><image:title>언커버 내부 교육</image:title></image:image>
-  </url>
+  <url><loc>https://uncoveroptic.kr/about.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <url>
-    <loc>https://uncoveroptic.co.kr/contact.html</loc>
+    <loc>https://uncoveroptic.kr/experience.html</loc>
     <lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
-    <image:image><image:loc>https://uncoveroptic.co.kr/images/contact_store.jpg</image:loc><image:title>언커버 안경원 매장 외관</image:title><image:caption>서울 중구 동호로 180</image:caption></image:image>
+  </url>
+  <url><loc>https://uncoveroptic.kr/experience-briefing.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <image:image><image:loc>https://uncoveroptic.kr/images/briefing_process.jpg</image:loc><image:title>브리핑 검안 프로세스</image:title></image:image>
+  </url>
+  <url><loc>https://uncoveroptic.kr/experience-dizziness.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <image:image><image:loc>https://uncoveroptic.kr/images/dizziness_store.jpg</image:loc><image:title>어지러움 해결 안경원</image:title></image:image>
+  </url>
+  <url><loc>https://uncoveroptic.kr/experience-progressive.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <image:image><image:loc>https://uncoveroptic.kr/images/progressive_lens1.jpg</image:loc><image:title>누진렌즈 직접 체험</image:title></image:image>
+  </url>
+  <url><loc>https://uncoveroptic.kr/experience-fitting.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <image:image><image:loc>https://uncoveroptic.kr/images/fitting_lens1.jpg</image:loc><image:title>안경 피팅 시스템</image:title></image:image>
+  </url>
+
+  <url><loc>https://uncoveroptic.kr/solution.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <image:image><image:loc>https://uncoveroptic.kr/images/solution_custom.jpg</image:loc><image:title>맞춤 안경 솔루션</image:title></image:image>
+  </url>
+
+  <url><loc>https://uncoveroptic.kr/academy.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://uncoveroptic.kr/academy-forum.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image><image:loc>https://uncoveroptic.kr/images/forum_new1.jpg</image:loc><image:title>안경사 포럼</image:title></image:image>
+  </url>
+  <url><loc>https://uncoveroptic.kr/academy-education.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://uncoveroptic.kr/academy-internal.html</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image><image:loc>https://uncoveroptic.kr/images/internal_education.jpg</image:loc><image:title>언커버 내부 교육</image:title></image:image>
+  </url>
+
+  <url>
+    <loc>https://uncoveroptic.kr/contact.html</loc>
+    <lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+    <image:image><image:loc>https://uncoveroptic.kr/images/contact_store.jpg</image:loc><image:title>언커버 안경원 매장 외관</image:title><image:caption>서울 중구 동호로 180</image:caption></image:image>
   </url>
 
 </urlset>
