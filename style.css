@@ -978,6 +978,66 @@ p  { margin-bottom: 1rem; color: var(--text-secondary); }
 }
 
 /* =========================================
+   피팅 — 왜곡검사기 섹션
+   ========================================= */
+.distortion-photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 2rem;
+}
+.distortion-photo {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    background: #000;
+    position: relative;
+}
+.distortion-photo img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+.distortion-photo:hover img { transform: scale(1.03); }
+.distortion-caption {
+    padding: 1rem 1.25rem 1.1rem;
+    background: #fff;
+}
+.distortion-badge {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+.distortion-badge.good  { background: #e6f5f3; color: var(--primary-teal); }
+.distortion-badge.check { background: #fff3e0; color: #e67e22; }
+.distortion-caption p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.5;
+}
+.distortion-desc {
+    text-align: center;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.8;
+    padding: 1.25rem 1.5rem;
+    background: var(--bg-oak);
+    border-radius: 12px;
+}
+@media (max-width: 640px) {
+    .distortion-photos { grid-template-columns: 1fr; gap: 16px; }
+}
+
+/* =========================================
    누진 체험 — 사진 3열 그리드
    ========================================= */
 .progressive-photo-grid {
