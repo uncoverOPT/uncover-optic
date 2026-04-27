@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://3000-i2m4rmes30gt8ci2cyooi-de59bda9.sandbox.novita.ai/sitemap.xml
+Sitemap: https://uncoveroptic.co.kr/sitemap.xml
 
 # 네이버 봇
 User-agent: Yeti
