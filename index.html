@@ -237,19 +237,45 @@
     </div>
 </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Hero Slider -->
+    <section class="hero-slider" id="heroSlider">
+        <!-- Slide 1 -->
+        <div class="hero-slide active" style="background-image:url('images/hero_image.jpg')">
+            <div class="hero-slide-overlay"></div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="hero-slide" style="background-image:url('images/lecture_hero.jpg')">
+            <div class="hero-slide-overlay"></div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="hero-slide" style="background-image:url('images/hero_mobile.jpg')">
+            <div class="hero-slide-overlay"></div>
+        </div>
+
+        <!-- Content (stays fixed over slides) -->
         <div class="hero-content">
-            <p class="hero-subtitle">UNCOVER OPTICAL</p>
-            <h1>가리지 않고<br>보여드립니다</h1>
-            <p class="hero-description">
+            <p class="hero-subtitle hero-anim">UNCOVER OPTICAL</p>
+            <h1 class="hero-anim">가리지 않고<br>보여드립니다</h1>
+            <p class="hero-description hero-anim">
                 안경을 맞춰도 불편했던 경험이 있으신가요?<br>
                 언커버는 고객님의 감각까지 설계합니다.
             </p>
-            <div class="hero-buttons">
+            <div class="hero-buttons hero-anim">
                 <a href="https://booking.naver.com/booking/6/bizes/141576" target="_blank" class="btn btn-primary">검안 예약하기</a>
                 <a href="experience.html" class="btn btn-secondary">체험 시스템 알아보기</a>
             </div>
+        </div>
+
+        <!-- Slide indicators -->
+        <div class="hero-dots">
+            <span class="hero-dot active" data-idx="0"></span>
+            <span class="hero-dot" data-idx="1"></span>
+            <span class="hero-dot" data-idx="2"></span>
+        </div>
+
+        <!-- Scroll hint -->
+        <div class="scroll-hint">
+            <span></span>
         </div>
     </section>
 
@@ -535,27 +561,38 @@
             </div>
         </div>
     </div>
+    <!-- Custom Cursor Elements -->
+    <div class="cursor-outer" id="cursorOuter"></div>
+    <div class="cursor-logo" id="cursorLogo"></div>
+
     <script>
-    // Navbar scroll
+    /* ============================================================
+       1. NAVBAR SCROLL
+    ============================================================ */
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
         navbar.classList.toggle('scrolled', window.scrollY > 40);
     });
-    // Mobile toggle
+
+    /* ============================================================
+       2. MOBILE TOGGLE
+    ============================================================ */
     const mobileToggle = document.getElementById('mobileToggle');
     const navMenu = document.getElementById('navMenu');
     mobileToggle.addEventListener('click', () => {
         navMenu.classList.toggle('active');
         mobileToggle.classList.toggle('active');
     });
-    // Close menu when clicking nav link
     navMenu.querySelectorAll('a:not(.nav-cta)').forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
             mobileToggle.classList.remove('active');
         });
     });
-    // Channel sidebar
+
+    /* ============================================================
+       3. CHANNEL SIDEBAR
+    ============================================================ */
     function toggleSidebar() {
         document.getElementById('channelSidebar').classList.toggle('open');
     }
@@ -563,6 +600,147 @@
         const sb = document.getElementById('channelSidebar');
         if (sb && !sb.contains(e.target)) sb.classList.remove('open');
     });
+
+    /* ============================================================
+       4. HERO SLIDER
+    ============================================================ */
+    (function() {
+        const slides = document.querySelectorAll('.hero-slide');
+        const dots   = document.querySelectorAll('.hero-dot');
+        let current  = 0;
+        let timer    = null;
+
+        function goTo(idx) {
+            slides[current].classList.remove('active');
+            slides[current].classList.add('prev');
+            dots[current].classList.remove('active');
+            setTimeout(() => slides[(idx + slides.length) % slides.length > idx ? current : (current + slides.length) % slides.length].classList.remove('prev'), 1300);
+            current = (idx + slides.length) % slides.length;
+            slides[current].classList.add('active');
+            dots[current].classList.add('active');
+        }
+
+        function next() { goTo(current + 1); }
+
+        function startTimer() {
+            clearInterval(timer);
+            timer = setInterval(next, 5000);
+        }
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                goTo(parseInt(dot.dataset.idx));
+                startTimer();
+            });
+        });
+
+        startTimer();
+
+        // Hero entrance animation
+        setTimeout(() => {
+            document.querySelectorAll('.hero-anim').forEach((el, i) => {
+                setTimeout(() => el.classList.add('visible'), i * 230);
+            });
+        }, 200);
+    })();
+
+    /* ============================================================
+       5. CUSTOM CURSOR (데스크탑만)
+    ============================================================ */
+    (function() {
+        if (window.matchMedia('(pointer: coarse)').matches) return;
+        const outer = document.getElementById('cursorOuter');
+        const logo  = document.getElementById('cursorLogo');
+        if (!outer || !logo) return;
+
+        let mx = window.innerWidth / 2, my = window.innerHeight / 2;
+        let ox = mx, oy = my;
+
+        document.addEventListener('mousemove', e => {
+            mx = e.clientX; my = e.clientY;
+            // logo follows instantly
+            logo.style.left = mx + 'px';
+            logo.style.top  = my + 'px';
+        });
+
+        // outer ring follows with smooth lag
+        function animOuter() {
+            ox += (mx - ox) * 0.12;
+            oy += (my - oy) * 0.12;
+            outer.style.left = ox + 'px';
+            outer.style.top  = oy + 'px';
+            requestAnimationFrame(animOuter);
+        }
+        animOuter();
+
+        // hover effect on interactive elements
+        const hoverEls = document.querySelectorAll('a, button, .hero-dot, .feature-card, .info-card, .btn');
+        hoverEls.forEach(el => {
+            el.addEventListener('mouseenter', () => { outer.classList.add('hovered'); });
+            el.addEventListener('mouseleave', () => { outer.classList.remove('hovered'); });
+        });
+
+        // click ripple
+        document.addEventListener('mousedown', () => {
+            outer.classList.add('clicked');
+            logo.classList.add('clicked');
+        });
+        document.addEventListener('mouseup', () => {
+            outer.classList.remove('clicked');
+            logo.classList.remove('clicked');
+        });
+    })();
+
+    /* ============================================================
+       6. SCROLL REVEAL — IntersectionObserver
+    ============================================================ */
+    (function() {
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    io.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        // section-title reveal + underline
+        document.querySelectorAll('.section-title').forEach(el => {
+            el.classList.add('reveal');
+            io.observe(el);
+        });
+
+        // feature cards — stagger
+        document.querySelectorAll('.feature-card').forEach((el, i) => {
+            el.classList.add('reveal', `reveal-d${Math.min(i+1,5)}`);
+            io.observe(el);
+        });
+
+        // content blocks — left/right alternating
+        document.querySelectorAll('.content-block').forEach((el, i) => {
+            const textEl  = el.querySelector('.content-text');
+            const imgEl   = el.querySelector('.content-image');
+            const isRev   = el.classList.contains('reverse');
+            if (textEl) { textEl.classList.add(isRev ? 'reveal-right' : 'reveal-left'); io.observe(textEl); }
+            if (imgEl)  { imgEl.classList.add(isRev ? 'reveal-left' : 'reveal-right');  io.observe(imgEl); }
+        });
+
+        // info-cards — stagger scale
+        document.querySelectorAll('.info-card').forEach((el, i) => {
+            el.classList.add('reveal-scale', `reveal-d${Math.min(i+1,5)}`);
+            io.observe(el);
+        });
+
+        // generic sections (cta, footer etc.)
+        document.querySelectorAll('.cta-section, .footer').forEach(el => {
+            el.classList.add('reveal');
+            io.observe(el);
+        });
+
+        // why-video
+        const vid = document.querySelector('.why-video');
+        if (vid) { vid.classList.add('reveal'); io.observe(vid); }
+    })();
     </script>
 </body>
 </html>
