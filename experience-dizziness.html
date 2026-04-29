@@ -213,4 +213,43 @@
         if (sb && !sb.contains(e.target)) sb.classList.remove('open');
     });
     </script>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-outer" id="cursorOuter"></div>
+    <div class="cursor-logo" id="cursorLogo"></div>
+    <script>
+    (function() {
+        if (window.matchMedia('(pointer: coarse)').matches) return;
+        const outer = document.getElementById('cursorOuter');
+        const logo  = document.getElementById('cursorLogo');
+        if (!outer || !logo) return;
+        let mx = window.innerWidth / 2, my = window.innerHeight / 2;
+        let ox = mx, oy = my;
+        document.addEventListener('mousemove', e => {
+            mx = e.clientX; my = e.clientY;
+            logo.style.left = mx + 'px';
+            logo.style.top  = my + 'px';
+        });
+        function animOuter() {
+            ox += (mx - ox) * 0.12;
+            oy += (my - oy) * 0.12;
+            outer.style.left = ox + 'px';
+            outer.style.top  = oy + 'px';
+            requestAnimationFrame(animOuter);
+        }
+        animOuter();
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseenter', () => outer.classList.add('hovered'));
+            el.addEventListener('mouseleave', () => outer.classList.remove('hovered'));
+        });
+        document.addEventListener('mousedown', () => {
+            outer.classList.add('clicked');
+            logo.classList.add('clicked');
+        });
+        document.addEventListener('mouseup', () => {
+            outer.classList.remove('clicked');
+            logo.classList.remove('clicked');
+        });
+    })();
+    </script>
 </body></html>
