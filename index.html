@@ -579,9 +579,7 @@
             </div>
         </div>
     </div>
-    <!-- Custom Cursor Elements -->
-    <div class="cursor-outer" id="cursorOuter"></div>
-    <div class="cursor-logo" id="cursorLogo"></div>
+
 
     <script>
     /* ============================================================
@@ -671,49 +669,7 @@
         }, 200);
     })();
 
-    /* ============================================================
-       5. CUSTOM CURSOR (데스크탑만) — cursor:none 없이 로고만 띄움
-    ============================================================ */
-    (function() {
-        if (window.matchMedia('(pointer: coarse)').matches) return;
-        const outer = document.getElementById('cursorOuter');
-        const logo  = document.getElementById('cursorLogo');
-        if (!outer || !logo) return;
 
-        const OUTER_R = 20;
-        const LOGO_R  = 14;
-        let mx = -500, my = -500;
-        let ox = -500, oy = -500;
-
-        document.addEventListener('mousemove', e => {
-            mx = e.clientX; my = e.clientY;
-            logo.style.left = (mx - LOGO_R) + 'px';
-            logo.style.top  = (my - LOGO_R) + 'px';
-            outer.classList.add('visible');
-            logo.classList.add('visible');
-        }, { passive: true });
-
-        document.addEventListener('mouseleave', () => {
-            outer.classList.remove('visible');
-            logo.classList.remove('visible');
-        });
-
-        (function animOuter() {
-            ox += (mx - ox) * 0.12;
-            oy += (my - oy) * 0.12;
-            outer.style.left = (ox - OUTER_R) + 'px';
-            outer.style.top  = (oy - OUTER_R) + 'px';
-            requestAnimationFrame(animOuter);
-        })();
-
-        document.querySelectorAll('a, button, .hero-dot, .feature-card, .info-card, .btn').forEach(el => {
-            el.addEventListener('mouseenter', () => outer.classList.add('hovered'));
-            el.addEventListener('mouseleave', () => outer.classList.remove('hovered'));
-        });
-
-        document.addEventListener('mousedown', () => { outer.classList.add('clicked'); logo.classList.add('clicked'); });
-        document.addEventListener('mouseup',   () => { outer.classList.remove('clicked'); logo.classList.remove('clicked'); });
-    })();
 
     /* ============================================================
        6. SCROLL REVEAL — IntersectionObserver
