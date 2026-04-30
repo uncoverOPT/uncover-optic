@@ -1202,6 +1202,14 @@ p  { margin-bottom: 1rem; color: var(--text-secondary); }
 /* =============================================
    CUSTOM CURSOR — 로고 따라다니기
    ============================================= */
+/* cursor:none — html이 아닌 body에만 적용해야 스크롤 막힘 없음 */
+body { cursor: none; }
+input, textarea, select { cursor: auto; }
+@media (pointer: coarse) {
+    body { cursor: auto; }
+    .cursor-outer, .cursor-logo { display: none !important; }
+}
+
 .cursor-outer {
     position: fixed;
     width: 40px;
@@ -1239,9 +1247,6 @@ p  { margin-bottom: 1rem; color: var(--text-secondary); }
 }
 .cursor-outer.clicked { width: 30px; height: 30px; opacity: 0.7; }
 .cursor-logo.clicked  { opacity: 0.7; }
-@media (pointer: coarse) {
-    .cursor-outer, .cursor-logo { display: none !important; }
-}
 
 /* =============================================
    SCROLL REVEAL — 범용 fade-up
