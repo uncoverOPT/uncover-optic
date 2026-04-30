@@ -1201,9 +1201,14 @@ p  { margin-bottom: 1rem; color: var(--text-secondary); }
 /* =============================================
    CUSTOM CURSOR — 로고 따라다니기
    ============================================= */
-/* cursor: none은 scroll 간섭 방지를 위해 body에만 적용 */
-body:not(input):not(textarea) { cursor: none; }
-@media (pointer: coarse) { body, * { cursor: auto !important; } }
+/* cursor:none은 JS가 body에 .cursor-active 클래스를 붙일 때만 적용 */
+body.cursor-active,
+body.cursor-active a,
+body.cursor-active button { cursor: none !important; }
+/* 터치 기기에서는 절대 숨기지 않음 */
+@media (pointer: coarse) {
+    body, body * { cursor: auto !important; }
+}
 
 .cursor-outer {
     position: fixed;
@@ -1212,13 +1217,11 @@ body:not(input):not(textarea) { cursor: none; }
     border-radius: 50%;
     border: 1.5px solid rgba(32,178,170,0.5);
     pointer-events: none !important;
-    touch-action: none;
-    user-select: none;
     z-index: 99999;
-    transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease, background 0.3s ease;
-    mix-blend-mode: normal;
-    left: -100px;
-    top: -100px;
+    transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+    left: -200px;
+    top: -200px;
+    opacity: 0;
 }
 .cursor-logo {
     position: fixed;
@@ -1226,14 +1229,15 @@ body:not(input):not(textarea) { cursor: none; }
     height: 28px;
     border-radius: 50%;
     pointer-events: none !important;
-    touch-action: none;
-    user-select: none;
     z-index: 100000;
-    left: -100px;
-    top: -100px;
+    left: -200px;
+    top: -200px;
     background: #fff url('images/logo.png') center / 22px no-repeat;
     box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    opacity: 0;
 }
+.cursor-outer.visible { opacity: 1; }
+.cursor-logo.visible  { opacity: 1; }
 .cursor-outer.hovered {
     width: 56px;
     height: 56px;
@@ -1245,9 +1249,7 @@ body:not(input):not(textarea) { cursor: none; }
     height: 30px;
     opacity: 0.7;
 }
-.cursor-logo.clicked {
-    opacity: 0.7;
-}
+.cursor-logo.clicked { opacity: 0.7; }
 
 /* =============================================
    SCROLL REVEAL — 범용 fade-up
