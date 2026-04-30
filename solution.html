@@ -387,18 +387,19 @@
         const outer = document.getElementById('cursorOuter');
         const logo  = document.getElementById('cursorLogo');
         if (!outer || !logo) return;
-        let mx = window.innerWidth / 2, my = window.innerHeight / 2;
-        let ox = mx, oy = my;
+        const OUTER_SIZE = 40, LOGO_SIZE = 28;
+        let mx = -200, my = -200;
+        let ox = -200, oy = -200;
         document.addEventListener('mousemove', e => {
             mx = e.clientX; my = e.clientY;
-            logo.style.left = mx + 'px';
-            logo.style.top  = my + 'px';
-        });
+            logo.style.left = (mx - LOGO_SIZE / 2) + 'px';
+            logo.style.top  = (my - LOGO_SIZE / 2) + 'px';
+        }, { passive: true });
         function animOuter() {
             ox += (mx - ox) * 0.12;
             oy += (my - oy) * 0.12;
-            outer.style.left = ox + 'px';
-            outer.style.top  = oy + 'px';
+            outer.style.left = (ox - OUTER_SIZE / 2) + 'px';
+            outer.style.top  = (oy - OUTER_SIZE / 2) + 'px';
             requestAnimationFrame(animOuter);
         }
         animOuter();
