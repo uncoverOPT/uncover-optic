@@ -257,30 +257,15 @@
         const logo  = document.getElementById('cursorLogo');
         if (!outer || !logo) return;
         const OUTER_R = 20, LOGO_R = 14;
-        let mx = -500, my = -500, ox = -500, oy = -500, entered = false;
-        function onFirstMove(e) {
-            mx = e.clientX; my = e.clientY; ox = mx; oy = my;
-            document.body.classList.add('cursor-active');
-            outer.classList.add('visible'); logo.classList.add('visible');
-            entered = true;
-            document.removeEventListener('mousemove', onFirstMove);
-            document.addEventListener('mousemove', onMove, { passive: true });
-        }
-        function onMove(e) {
+        let mx = -500, my = -500, ox = -500, oy = -500;
+        document.addEventListener('mousemove', e => {
             mx = e.clientX; my = e.clientY;
             logo.style.left = (mx - LOGO_R) + 'px';
             logo.style.top  = (my - LOGO_R) + 'px';
-        }
-        document.addEventListener('mousemove', onFirstMove);
+            outer.classList.add('visible'); logo.classList.add('visible');
+        }, { passive: true });
         document.addEventListener('mouseleave', () => {
-            document.body.classList.remove('cursor-active');
             outer.classList.remove('visible'); logo.classList.remove('visible');
-        });
-        document.addEventListener('mouseenter', () => {
-            if (entered) {
-                document.body.classList.add('cursor-active');
-                outer.classList.add('visible'); logo.classList.add('visible');
-            }
         });
         (function animOuter() {
             ox += (mx - ox) * 0.12; oy += (my - oy) * 0.12;

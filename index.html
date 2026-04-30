@@ -672,82 +672,47 @@
     })();
 
     /* ============================================================
-       5. CUSTOM CURSOR (데스크탑만)
+       5. CUSTOM CURSOR (데스크탑만) — cursor:none 없이 로고만 띄움
     ============================================================ */
     (function() {
-        // 터치 기기 제외
         if (window.matchMedia('(pointer: coarse)').matches) return;
         const outer = document.getElementById('cursorOuter');
         const logo  = document.getElementById('cursorLogo');
         if (!outer || !logo) return;
 
-        const OUTER_R = 20; // outer 반지름 (40px/2)
-        const LOGO_R  = 14; // logo 반지름 (28px/2)
-
+        const OUTER_R = 20;
+        const LOGO_R  = 14;
         let mx = -500, my = -500;
         let ox = -500, oy = -500;
-        let entered = false;
-        let rafId;
 
-        // 마우스가 처음 움직일 때 커서 활성화
-        function onFirstMove(e) {
-            mx = e.clientX; my = e.clientY;
-            ox = mx; oy = my;
-            document.body.classList.add('cursor-active');
-            outer.classList.add('visible');
-            logo.classList.add('visible');
-            entered = true;
-            document.removeEventListener('mousemove', onFirstMove);
-            document.addEventListener('mousemove', onMove, { passive: true });
-        }
-
-        function onMove(e) {
+        document.addEventListener('mousemove', e => {
             mx = e.clientX; my = e.clientY;
             logo.style.left = (mx - LOGO_R) + 'px';
             logo.style.top  = (my - LOGO_R) + 'px';
-        }
+            outer.classList.add('visible');
+            logo.classList.add('visible');
+        }, { passive: true });
 
-        document.addEventListener('mousemove', onFirstMove);
-
-        // 마우스가 창 밖으로 나가면 커서 숨김 (스크롤 허용)
         document.addEventListener('mouseleave', () => {
-            document.body.classList.remove('cursor-active');
             outer.classList.remove('visible');
             logo.classList.remove('visible');
         });
-        document.addEventListener('mouseenter', () => {
-            if (entered) {
-                document.body.classList.add('cursor-active');
-                outer.classList.add('visible');
-                logo.classList.add('visible');
-            }
-        });
 
-        // outer ring: rAF로 부드럽게 따라오기
-        function animOuter() {
+        (function animOuter() {
             ox += (mx - ox) * 0.12;
             oy += (my - oy) * 0.12;
             outer.style.left = (ox - OUTER_R) + 'px';
             outer.style.top  = (oy - OUTER_R) + 'px';
-            rafId = requestAnimationFrame(animOuter);
-        }
-        rafId = requestAnimationFrame(animOuter);
+            requestAnimationFrame(animOuter);
+        })();
 
-        // hover 효과
         document.querySelectorAll('a, button, .hero-dot, .feature-card, .info-card, .btn').forEach(el => {
             el.addEventListener('mouseenter', () => outer.classList.add('hovered'));
             el.addEventListener('mouseleave', () => outer.classList.remove('hovered'));
         });
 
-        // click 효과
-        document.addEventListener('mousedown', () => {
-            outer.classList.add('clicked');
-            logo.classList.add('clicked');
-        });
-        document.addEventListener('mouseup', () => {
-            outer.classList.remove('clicked');
-            logo.classList.remove('clicked');
-        });
+        document.addEventListener('mousedown', () => { outer.classList.add('clicked'); logo.classList.add('clicked'); });
+        document.addEventListener('mouseup',   () => { outer.classList.remove('clicked'); logo.classList.remove('clicked'); });
     })();
 
     /* ============================================================

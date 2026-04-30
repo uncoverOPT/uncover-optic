@@ -1201,13 +1201,9 @@ p  { margin-bottom: 1rem; color: var(--text-secondary); }
 /* =============================================
    CUSTOM CURSOR — 로고 따라다니기
    ============================================= */
-/* cursor:none은 JS가 body에 .cursor-active 클래스를 붙일 때만 적용 */
-body.cursor-active,
-body.cursor-active a,
-body.cursor-active button { cursor: none !important; }
-/* 터치 기기에서는 절대 숨기지 않음 */
+/* cursor:none 완전 제거 — 스크롤 막힘 버그 방지 */
 @media (pointer: coarse) {
-    body, body * { cursor: auto !important; }
+    .cursor-outer, .cursor-logo { display: none !important; }
 }
 
 .cursor-outer {
