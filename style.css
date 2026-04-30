@@ -1200,6 +1200,50 @@ p  { margin-bottom: 1rem; color: var(--text-secondary); }
 
 
 /* =============================================
+   CUSTOM CURSOR — 로고 따라다니기
+   ============================================= */
+.cursor-outer {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(0,120,106,0.6);
+    pointer-events: none !important;
+    z-index: 99999;
+    transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+    left: -200px;
+    top: -200px;
+    opacity: 0;
+}
+.cursor-logo {
+    position: fixed;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    pointer-events: none !important;
+    z-index: 100000;
+    left: -200px;
+    top: -200px;
+    background: #fff url('images/logo.png') center / 22px no-repeat;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.cursor-outer.visible { opacity: 1; }
+.cursor-logo.visible  { opacity: 1; }
+.cursor-outer.hovered {
+    width: 56px;
+    height: 56px;
+    background: rgba(0,120,106,0.08);
+    border-color: var(--primary-teal);
+}
+.cursor-outer.clicked { width: 30px; height: 30px; opacity: 0.7; }
+.cursor-logo.clicked  { opacity: 0.7; }
+@media (pointer: coarse) {
+    .cursor-outer, .cursor-logo { display: none !important; }
+}
+
+/* =============================================
    SCROLL REVEAL — 범용 fade-up
    ============================================= */
 .reveal {
