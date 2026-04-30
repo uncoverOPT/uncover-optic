@@ -175,20 +175,23 @@ p  { margin-bottom: 1rem; color: var(--text-secondary); }
 }
 
 /* Reservation CTA in Nav */
+.nav-menu > li:has(.nav-cta) {
+    display: flex;
+    align-items: center;
+}
 .nav-cta {
     background: var(--primary-teal);
     color: white !important;
-    padding: 0;
+    padding: 0 !important;
     width: 88px;
     height: 34px;
     border-radius: 20px;
     font-weight: 500;
     font-size: 0.88rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-    vertical-align: middle;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
     transition: background 0.3s;
 }
 .nav-cta:hover {
