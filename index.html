@@ -240,7 +240,7 @@
     <!-- Hero Slider -->
     <section class="hero-slider" id="heroSlider">
         <!-- Slide 1 -->
-        <div class="hero-slide active" style="background-image:url('images/hero_image.jpg')">
+        <div class="hero-slide" style="background-image:url('images/hero_image.jpg')">
             <div class="hero-slide-overlay"></div>
         </div>
         <!-- Slide 2 -->
@@ -263,7 +263,7 @@
 
         <!-- Slide indicators -->
         <div class="hero-dots">
-            <span class="hero-dot active" data-idx="0"></span>
+            <span class="hero-dot" data-idx="0"></span>
             <span class="hero-dot" data-idx="1"></span>
         </div>
 
@@ -625,6 +625,15 @@
             dot.addEventListener('click', () => {
                 goTo(parseInt(dot.dataset.idx));
                 startTimer();
+            });
+        });
+
+        // 첫 진입 시 scale(1.06) → scale(1) 줌아웃 트리거
+        // HTML에 active 없이 시작 → 한 프레임 후 active 추가해야 transition 작동
+        dots[0].classList.add('active');
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                slides[0].classList.add('active');
             });
         });
 
