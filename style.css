@@ -1321,16 +1321,26 @@ p  { margin-bottom: 1rem; color: var(--text-secondary); }
    MOBILE — hero slider 반응형
    ============================================= */
 @media (max-width: 768px) {
+    /* 슬라이더 → 단일 이미지로 전환 */
     .hero-slider {
+        width: 100%;
         min-height: 88vh;
         padding-top: 70px;
+        background:
+            linear-gradient(rgba(0,0,0,0.32), rgba(0,0,0,0.44)),
+            url('images/hero_mobile.jpg') center / cover no-repeat;
     }
+    /* 슬라이드 이미지들 모두 숨김 */
+    .hero-slide { display: none !important; }
+    /* 도트 인디케이터 숨김 */
+    .hero-dots { display: none !important; }
+    /* 스크롤 힌트 숨김 */
     .scroll-hint { display: none; }
-    .hero-dots { bottom: 1.5rem; }
+    /* 커서 숨김 */
     .cursor-outer, .cursor-logo { display: none !important; }
     * { cursor: auto !important; }
-}
-@media (max-width: 768px) {
+
+    /* 텍스트 크기 */
     .hero-slider .hero-subtitle { font-size: 0.8rem; letter-spacing: 2px; }
     .hero-slider h1 { font-size: clamp(1.75rem, 7vw, 2.4rem); }
     .hero-description { font-size: 0.95rem; }
