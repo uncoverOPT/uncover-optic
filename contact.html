@@ -138,8 +138,9 @@
             <h2 style="text-align: center; margin-bottom: 0.5rem; margin-top: 3rem;">오시는 길</h2>
             <p style="text-align: center; color: #6a6a6a; margin-bottom: 1.8rem; font-size: 0.95rem;">서울 중구 동호로 180 1층 · 주차 가능</p>
 
-            <!-- 네이버 지도 embed - 언커버 안경원 정확한 위치 -->
-            <div style="width:100%; height:420px; border-radius:14px; overflow:hidden; box-shadow:0 4px 24px rgba(0,0,0,0.10); margin-bottom:1.5rem;">
+            <!-- PC: 네이버 지도 iframe / 모바일: 카카오맵 정적 이미지 -->
+            <!-- PC용 네이버 지도 (모바일에서 숨김) -->
+            <div class="map-pc" style="width:100%; height:420px; border-radius:14px; overflow:hidden; box-shadow:0 4px 24px rgba(0,0,0,0.10); margin-bottom:1.5rem;">
                 <iframe
                     src="https://map.naver.com/p/entry/place/1591491682?placePath=/home&isEmbed=true"
                     width="100%"
@@ -149,6 +150,34 @@
                     loading="lazy">
                 </iframe>
             </div>
+
+            <!-- 모바일용 카카오맵 정적 이미지 (PC에서 숨김) -->
+            <a href="https://map.kakao.com/link/map/언커버안경원,37.55734,127.00570" target="_blank" class="map-mobile" style="display:none; width:100%; border-radius:14px; overflow:hidden; box-shadow:0 4px 24px rgba(0,0,0,0.10); margin-bottom:1.5rem; position:relative; text-decoration:none;">
+                <img
+                    src="https://map.kakao.com/link/staticmap?center=37.55734,127.00570&level=3&w=800&h=400&markers=s,127.00570,37.55734"
+                    alt="언커버 안경원 위치 지도"
+                    style="width:100%; height:320px; object-fit:cover; display:block;"
+                    onerror="this.style.display='none'; this.parentElement.querySelector('.map-fallback').style.display='flex';"
+                >
+                <!-- 이미지 로드 실패 시 대체 UI -->
+                <div class="map-fallback" style="display:none; width:100%; height:320px; background:#f5f5f5; align-items:center; justify-content:center; flex-direction:column; gap:12px; border-radius:14px;">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="#00786A"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    <p style="font-size:1rem; font-weight:600; color:#1a1a1a; margin:0;">언커버 안경원</p>
+                    <p style="font-size:0.9rem; color:#666; margin:0;">서울 중구 동호로 180 1층</p>
+                    <p style="font-size:0.85rem; color:#00786A; margin:0;">탭하여 카카오맵에서 열기 →</p>
+                </div>
+                <!-- 핀 오버레이 -->
+                <div style="position:absolute; bottom:12px; left:50%; transform:translateX(-50%); background:rgba(0,0,0,0.65); color:#fff; font-size:0.82rem; padding:6px 14px; border-radius:20px; white-space:nowrap;">
+                    📍 탭하면 카카오맵으로 이동
+                </div>
+            </a>
+
+            <style>
+                @media (max-width: 768px) {
+                    .map-pc { display: none !important; }
+                    .map-mobile { display: block !important; }
+                }
+            </style>
 
             <!-- 길찾기 버튼 2개 -->
             <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-top:1rem;">
