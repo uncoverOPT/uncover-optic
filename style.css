@@ -31,7 +31,6 @@ html {
     font-size: 16px;
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
-    overflow-x: clip; /* clip은 스크롤 컨텍스트를 만들지 않아 스크롤 막힘 없음 */
 }
 
 body {
@@ -230,7 +229,7 @@ p  { margin-bottom: 1rem; color: var(--text-secondary); }
 .hero-slider {
     position: relative;
     width: 100%;
-    max-width: 100vw;
+    max-width: 100%;
     min-height: 88vh;
     display: flex;
     align-items: center;
