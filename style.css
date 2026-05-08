@@ -31,6 +31,8 @@ html {
     font-size: 16px;
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;   /* 가로 넘침 차단 */
+    overflow-y: auto;     /* 세로 스크롤은 html이 담당 → 스크롤바 1개 */
 }
 
 body {
@@ -39,7 +41,8 @@ body {
     line-height: 1.7;
     background: var(--bg-white);
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
+    overflow-x: hidden;   /* fixed 요소 포함 가로 넘침 2차 차단 */
+    overflow-y: visible;  /* 세로는 html에 위임 — body 자체 스크롤 컨텍스트 생성 방지 */
 }
 
 img { max-width: 100%; height: auto; display: block; }
