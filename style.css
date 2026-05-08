@@ -1265,23 +1265,26 @@ input, textarea, select { cursor: auto; }
     opacity: 1;
     transform: translateY(0);
 }
+/* reveal-left/right: translateX → translateY로 변경
+   translateX는 overflow-x로 절대 잘리지 않아 모바일 가로스크롤 유발
+   translateY(위→아래 페이드인)는 가로 넘침 없음 */
 .reveal-left {
     opacity: 0;
-    transform: translateX(-50px);
+    transform: translateY(30px);
     transition: opacity 0.8s ease, transform 0.8s ease;
 }
 .reveal-left.visible {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
 }
 .reveal-right {
     opacity: 0;
-    transform: translateX(50px);
+    transform: translateY(30px);
     transition: opacity 0.8s ease, transform 0.8s ease;
 }
 .reveal-right.visible {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
 }
 .reveal-scale {
     opacity: 0;
