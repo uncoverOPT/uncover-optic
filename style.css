@@ -31,8 +31,10 @@ html {
     font-size: 16px;
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
-    overflow-x: hidden;   /* 가로 넘침 차단 */
-    overflow-y: auto;     /* 세로 스크롤은 html이 담당 → 스크롤바 1개 */
+    /* ★ overflow-x:clip = 가로 넘침 차단 + 스크롤 컨텍스트 생성 안 함 (hidden과 차이)
+       overflow-y는 설정하지 않음 → 브라우저 기본(auto) → 세로 스크롤바 1개만 생성 */
+    overflow-x: clip;
+    cursor: none; /* ★ cursor:none을 html에 적용 = body에 적용 시 스크롤 컨텍스트 생성 문제 방지 */
 }
 
 body {
@@ -41,8 +43,8 @@ body {
     line-height: 1.7;
     background: var(--bg-white);
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;   /* fixed 요소 포함 가로 넘침 2차 차단 */
-    overflow-y: visible;  /* 세로는 html에 위임 — body 자체 스크롤 컨텍스트 생성 방지 */
+    /* ★ body에는 overflow 일절 설정하지 않음
+       → body가 독립 스크롤 컨텍스트를 만들지 않음 → 스크롤바 2개 현상 근본 차단 */
 }
 
 img { max-width: 100%; height: auto; display: block; }
@@ -1205,11 +1207,11 @@ p  { margin-bottom: 1rem; color: var(--text-secondary); }
 /* =============================================
    CUSTOM CURSOR — 로고 따라다니기
    ============================================= */
-/* cursor:none — html이 아닌 body에만 적용해야 스크롤 막힘 없음 */
-body { cursor: none; }
+/* cursor:none — html에 적용 (body 적용 시 스크롤 컨텍스트 생성으로 스크롤바 2개 발생) */
+html { cursor: none; } /* 이미 위 html {} 블록에 포함됨 — 여기는 참조용 주석 */
 input, textarea, select { cursor: auto; }
 @media (pointer: coarse) {
-    body { cursor: auto; }
+    html { cursor: auto; }
     .cursor-outer, .cursor-logo { display: none !important; }
 }
 
