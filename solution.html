@@ -388,7 +388,7 @@
         const logo  = document.getElementById('cursorLogo');
         if (!outer || !logo) return;
         const OUTER_R = 20, LOGO_R = 14;
-        let mx = -500, my = -500, ox = -500, oy = -500;
+        let mx = null, my = null, ox = null, oy = null;  // null = 첫 mousemove 전
         document.addEventListener('mousemove', e => {
             mx = e.clientX; my = e.clientY;
             logo.style.left = (mx - LOGO_R) + 'px';
@@ -399,6 +399,8 @@
             outer.classList.remove('visible'); logo.classList.remove('visible');
         });
         (function animOuter() {
+            if (mx === null) { requestAnimationFrame(animOuter); return; }
+            if (ox === null) { ox = mx; oy = my; }
             ox += (mx - ox) * 0.12; oy += (my - oy) * 0.12;
             outer.style.left = (ox - OUTER_R) + 'px';
             outer.style.top  = (oy - OUTER_R) + 'px';
